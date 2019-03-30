@@ -73,7 +73,7 @@ let send_request = (url) => {
 	// console.log(address)
 	pushJSON(address, myurl);
 	document.getElementById('shortenedURL').value = window.location.href;
-	document.getElementById('sucess').innerHTML = "Short URL Copied to Clipboard!";
+	document.getElementById('sucess').innerHTML = "short url copied to clipboard 🚀";
 	copyer("shortenedURL");
 };
 let shorturl = () => {
@@ -83,7 +83,7 @@ let shorturl = () => {
 	let protocol_ok = re.test(longurl);
 	if (!protocol_ok) {
 		document.getElementById("erbox").style.color = "red";
-		document.getElementById("erbox").innerHTML = "❌ Invalid URL";
+		document.getElementById("erbox").innerHTML = "❌ invalid url";
 	} else {
 		document.getElementById("erbox").innerHTML = "";
 		if (document.getElementById("custominput").value == "") {
@@ -92,19 +92,19 @@ let shorturl = () => {
 		} else {
 			if (cre.test(document.getElementById("custominput").value)) {
 				if (cinp()) {
-					document.getElementById("erbox").style.color = "cyan";
-					document.getElementById("erbox").innerHTML = " Custom Address Available ✔️";
+					document.getElementById("erbox").style.color = "green";
+					document.getElementById("erbox").innerHTML = "custom url available ✔️";
 					genhash();
 					send_request(longurl);
 				} else {
 					document.getElementById("erbox").style.color = "red";
-					document.getElementById("erbox").innerHTML = "❌ Custom Address Already Used, Choose Another";
+					document.getElementById("erbox").innerHTML = "❌ custom url already used, choose another";
 					document.getElementById("custominput").placeholder = document.getElementById("custominput").value;
 					document.getElementById("custominput").value = "";
 				}
 			} else {
 				document.getElementById("erbox").style.color = "red";
-				document.getElementById("erbox").innerHTML = "Invalid Custom URL! Use only Alphanumerics and underscore!";
+				document.getElementById("erbox").innerHTML = "❌ invalid custom url, use only alphanumerics & underscore";
 				document.getElementById("custominput").placeholder = document.getElementById("custominput").value;
 				document.getElementById("custominput").value = "";
 			}

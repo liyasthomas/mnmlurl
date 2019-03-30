@@ -1,95 +1,77 @@
 * {
 	box-sizing: border-box;
+	outline: 0;
+	font-family: 'Nunito', 'Roboto', 'Noto', sans-serif;
 }
 
 body {
-	font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
-	margin: 2em;
-	margin: auto;
+	margin: 0;
+	padding: 0;
+	line-height: 1.5;
+	min-height: 100vh;
+	font-size: 18px;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
 	text-align: center;
-	background: whitesmoke;
 }
 
-h1,
-.h1 {
-	color: #102E87;
-}
-
-.h1 a {
-	color: #102E87;
-	text-decoration: none
-}
-
-.h1 a:visited {
-	color: #102E87;
-	text-decoration: none
-}
-
-.bold {
-	font-weight: bold;
+a {
+	text-decoration: none;
+	color: inherit;
 }
 
 p {
-	max-width: 600px;
-}
-
-form,
-.form {
-	margin-bottom: 10px;
-	padding: 15px;
-	background-color: #1337a5;
-	border: 1px solid #d6d6d6;
-	box-shadow: 3px 3px 0px #bababa;
-	display: inline-block;
-	width: 98%;
-	max-width: 380px;
+	max-width: 512px;
+	color: #b2b2b2;
 }
 
 .main {
-	margin-bottom: 25px;
-	padding: 0px 10px 5px 10px;
-	margin: 8px auto 8px;
-	border: 2px solid #0e2877;
-	box-shadow: 5px 6px 0px #0e2877;
-	width: 95%;
-	max-width: 600px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	padding: 16px;
+}
+
+.form {
+	padding: 32px;
+	background-color: #f5f5f5;
+	border: 1px solid #eee;
+	border-radius: 8px;
+	box-shadow: 4px 4px 0 #bbb;
+	width: 100%;
+	max-width: 512px;
 }
 
 input {
-	display: block;
-	margin-bottom: 10px;
-	padding: 5px;
+	margin-bottom: 8px;
+	padding: 16px;
 	width: 100%;
-	border: 1px solid lightgrey;
-	border-radius: 3px;
-	font-size: 16px;
+	border: 1px solid #eee;
+	border-radius: 8px;
+	font-size: 18px;
 }
 
 button {
+	width: 100%;
 	font-size: 20px;
-	border-radius: 5px;
-	color: #0e2877;
-	background-color: white;
-	border: 0px solid grey;
+	font-weight: 800;
+	border-radius: 8px;
+	background-color: #83ffcd;
+	border: 1px solid #000;
+	box-shadow: 4px 4px 0 #000;
 	cursor: pointer;
+	padding: 16px;
 }
 
 button:hover {
-	background-color: lightseagreen;
+	box-shadow: 2px 2px 0 #000;
 }
 
 button:active {
 	box-shadow: none;
-}
-
-li {
-	margin-bottom: 5px;
-}
-
-footer {
-	color: #0e2877;
-}
-
-.small-text {
-	font-size: smaller;
 }
