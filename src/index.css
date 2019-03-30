@@ -1,0 +1,95 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Benton Sans", "Helvetica Neue", helvetica, arial, sans-serif;
+	margin: 2em;
+	margin: auto;
+	text-align: center;
+	background: whitesmoke;
+}
+
+h1,
+.h1 {
+	color: #102E87;
+}
+
+.h1 a {
+	color: #102E87;
+	text-decoration: none
+}
+
+.h1 a:visited {
+	color: #102E87;
+	text-decoration: none
+}
+
+.bold {
+	font-weight: bold;
+}
+
+p {
+	max-width: 600px;
+}
+
+form,
+.form {
+	margin-bottom: 10px;
+	padding: 15px;
+	background-color: #1337a5;
+	border: 1px solid #d6d6d6;
+	box-shadow: 3px 3px 0px #bababa;
+	display: inline-block;
+	width: 98%;
+	max-width: 380px;
+}
+
+.main {
+	margin-bottom: 25px;
+	padding: 0px 10px 5px 10px;
+	margin: 8px auto 8px;
+	border: 2px solid #0e2877;
+	box-shadow: 5px 6px 0px #0e2877;
+	width: 95%;
+	max-width: 600px;
+}
+
+input {
+	display: block;
+	margin-bottom: 10px;
+	padding: 5px;
+	width: 100%;
+	border: 1px solid lightgrey;
+	border-radius: 3px;
+	font-size: 16px;
+}
+
+button {
+	font-size: 20px;
+	border-radius: 5px;
+	color: #0e2877;
+	background-color: white;
+	border: 0px solid grey;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: lightseagreen;
+}
+
+button:active {
+	box-shadow: none;
+}
+
+li {
+	margin-bottom: 5px;
+}
+
+footer {
+	color: #0e2877;
+}
+
+.small-text {
+	font-size: smaller;
+}

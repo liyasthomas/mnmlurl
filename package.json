@@ -1,0 +1,37 @@
+{
+	"name": "mnmlurl",
+	"version": "1.0.0",
+	"description": "Modern simplicity",
+	"main": "index.js",
+	"scripts": {
+		"build": "gulp build",
+		"packit": "gulp packit"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/liyasthomas/mnmlurl.git"
+	},
+	"keywords": [
+		"url",
+		"url-shortener",
+		"free"
+	],
+	"author": "Liyas Thomas",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/liyasthomas/mnmlurl/issues"
+	},
+	"homepage": "https://github.com/liyasthomas/mnmlurl#readme",
+	"dependencies": {
+		"@babel/core": "^7.2.0",
+		"@babel/preset-env": "^7.2.0",
+		"cssnano": "^4.1.7",
+		"del": "^3.0.0",
+		"gulp": "^4.0.0",
+		"gulp-babel": "^8.0.0",
+		"gulp-htmlmin": "^5.0.1",
+		"gulp-postcss": "^8.0.0",
+		"gulp-uglify": "^3.0.1",
+		"gulp-zip": "^4.2.0"
+	}
+}
