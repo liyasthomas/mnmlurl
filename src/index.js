@@ -89,15 +89,15 @@ let shorturl = async () => {
 	document.getElementById("erbox").innerHTML = "";
 	document.getElementById("sucess").innerHTML = "";
 	document.getElementById("rotate").setAttribute("class", "spinning");
-	document.getElementById("status").innerHTML = "shortning...";
+	document.getElementById("status").innerHTML = "shortening...";
 	await sleep(1000);
 	let longurl = geturl();
 	let re = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
 	let cre = /^([a-zA-Z0-9 _-]+)$/;
 	let protocol_ok = re.test(longurl);
 	if (!protocol_ok) {
-		document.getElementById("erbox").style.color = "red";
-		document.getElementById("erbox").innerHTML = "❌ invalid url";
+		document.getElementById("erbox").style.color = "orangered";
+		document.getElementById("erbox").innerHTML = "🤔 invalid url";
 		document.getElementById("rotate").classList.remove("spinning");
 		document.getElementById("status").innerHTML = "shorten";
 	} else {
@@ -109,22 +109,22 @@ let shorturl = async () => {
 			if (cre.test(document.getElementById("custominput").value)) {
 				if (cinp()) {
 					document.getElementById("erbox").style.color = "limegreen";
-					document.getElementById("erbox").innerHTML = "custom url available ✔️";
+					document.getElementById("erbox").innerHTML = "alias available 😊";
 					document.getElementById("rotate").classList.remove("spinning");
 					document.getElementById("status").innerHTML = "shorten";
 					genhash();
 					send_request(longurl);
 				} else {
-					document.getElementById("erbox").style.color = "red";
-					document.getElementById("erbox").innerHTML = "❌ custom url already used, choose another";
+					document.getElementById("erbox").style.color = "orangered";
+					document.getElementById("erbox").innerHTML = "😒 alias already in use, choose another";
 					document.getElementById("custominput").placeholder = document.getElementById("custominput").value;
 					document.getElementById("custominput").value = "";
 					document.getElementById("rotate").classList.remove("spinning");
 					document.getElementById("status").innerHTML = "shorten";
 				}
 			} else {
-				document.getElementById("erbox").style.color = "red";
-				document.getElementById("erbox").innerHTML = "❌ invalid custom url, use only alphanumerics & underscore";
+				document.getElementById("erbox").style.color = "orangered";
+				document.getElementById("erbox").innerHTML = "😮 invalid custom alias, use only alphanumerics & underscore";
 				document.getElementById("custominput").placeholder = document.getElementById("custominput").value;
 				document.getElementById("custominput").value = "";
 				document.getElementById("rotate").classList.remove("spinning");
