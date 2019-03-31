@@ -21,11 +21,11 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 ### Features :sparkles:
 
-:sparkles: **URL shortning made simple**: mnmlurl uses [jsonstore.io](https://www.jsonstore.io) to  store data on an endpoint JSON file using HTTPS requests. It works on any url.
+:heart_eyes: **URL shortning made simple**: mnmlurl uses [jsonstore.io](https://www.jsonstore.io) to  store data on an endpoint JSON file using HTTPS requests. It works on any url.
 
 :heart: **No server side logging**: Your privacy is important for us. We never log, collect or prompt to sell your data to anyone.
 
-:fire: **Custon and random alias support**: Add your own custom alias or generate a random one.
+:fire: **Custom and random alias support**: Add your own custom alias or generate a random one.
 
 :zap: **Performance**: mnmlurl is a thin web app on top of HTML, CSS and JavaScript. Being a Progressive web app, mnmlurl offers lightning fast loading and offline support via workbox and service worker.
 
