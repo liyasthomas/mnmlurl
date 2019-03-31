@@ -25,6 +25,8 @@
 	"dependencies": {
 		"@babel/core": "^7.4.0",
 		"@babel/preset-env": "^7.4.2",
+		"@babel/runtime": "^7.4.2",
+		"browserify": "^16.2.3",
 		"cssnano": "^4.1.10",
 		"del": "^4.0.0",
 		"gulp": "^4.0.0",
@@ -32,6 +34,10 @@
 		"gulp-htmlmin": "^5.0.1",
 		"gulp-postcss": "^8.0.0",
 		"gulp-uglify": "^3.0.2",
-		"gulp-zip": "^4.2.0"
+		"gulp-zip": "^4.2.0",
+		"vinyl-source-stream": "^2.0.0"
+	},
+	"devDependencies": {
+		"@babel/plugin-transform-runtime": "^7.4.0"
 	}
 }

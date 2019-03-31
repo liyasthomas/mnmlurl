@@ -1,5 +1,5 @@
-var emojis = ['🙈', '👽', '💩', '✨', '🌟', '💫', '💦', '💖', '💎', '🌈', '🎉', '🔮', ];
-var randomItem = emojis[Math.floor(Math.random() * emojis.length)];
+let emojis = ['🙈', '👽', '💩', '✨', '🌟', '💫', '💦', '💖', '💎', '🌈', '🎉', '🔮', ];
+let randomItem = emojis[Math.floor(Math.random() * emojis.length)];
 document.getElementById("emoji").innerHTML = randomItem;
 let pushJSON = (url, data) => {
 	let request = new XMLHttpRequest();
