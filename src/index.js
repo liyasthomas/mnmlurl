@@ -1,3 +1,6 @@
+var emojis = ['🙈', '👽', '💩', '✨', '🌟', '💫', '💦', '💖', '💎', '🌈', '🎉', '🔮', ];
+var randomItem = emojis[Math.floor(Math.random() * emojis.length)];
+document.getElementById("emoji").innerHTML = randomItem;
 let pushJSON = (url, data) => {
 	let request = new XMLHttpRequest();
 	request.open('POST', url);
@@ -75,8 +78,19 @@ let send_request = (url) => {
 	document.getElementById('shortenedURL').value = window.location.href;
 	document.getElementById('sucess').innerHTML = "short url copied to clipboard 🚀";
 	copyer("shortenedURL");
+	document.getElementById("rotate").classList.remove("spinning");
+	document.getElementById("status").innerHTML = "shorten";
 };
-let shorturl = () => {
+
+function sleep(ms) {
+	return new Promise(resolve => setTimeout(resolve, ms));
+}
+let shorturl = async () => {
+	document.getElementById("erbox").innerHTML = "";
+	document.getElementById("sucess").innerHTML = "";
+	document.getElementById("rotate").setAttribute("class", "spinning");
+	document.getElementById("status").innerHTML = "shortning...";
+	await sleep(1000);
 	let longurl = geturl();
 	let re = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
 	let cre = /^([a-zA-Z0-9 _-]+)$/;
@@ -84,6 +98,8 @@ let shorturl = () => {
 	if (!protocol_ok) {
 		document.getElementById("erbox").style.color = "red";
 		document.getElementById("erbox").innerHTML = "❌ invalid url";
+		document.getElementById("rotate").classList.remove("spinning");
+		document.getElementById("status").innerHTML = "shorten";
 	} else {
 		document.getElementById("erbox").innerHTML = "";
 		if (document.getElementById("custominput").value == "") {
@@ -92,8 +108,10 @@ let shorturl = () => {
 		} else {
 			if (cre.test(document.getElementById("custominput").value)) {
 				if (cinp()) {
-					document.getElementById("erbox").style.color = "green";
+					document.getElementById("erbox").style.color = "limegreen";
 					document.getElementById("erbox").innerHTML = "custom url available ✔️";
+					document.getElementById("rotate").classList.remove("spinning");
+					document.getElementById("status").innerHTML = "shorten";
 					genhash();
 					send_request(longurl);
 				} else {
@@ -101,12 +119,16 @@ let shorturl = () => {
 					document.getElementById("erbox").innerHTML = "❌ custom url already used, choose another";
 					document.getElementById("custominput").placeholder = document.getElementById("custominput").value;
 					document.getElementById("custominput").value = "";
+					document.getElementById("rotate").classList.remove("spinning");
+					document.getElementById("status").innerHTML = "shorten";
 				}
 			} else {
 				document.getElementById("erbox").style.color = "red";
 				document.getElementById("erbox").innerHTML = "❌ invalid custom url, use only alphanumerics & underscore";
 				document.getElementById("custominput").placeholder = document.getElementById("custominput").value;
 				document.getElementById("custominput").value = "";
+				document.getElementById("rotate").classList.remove("spinning");
+				document.getElementById("status").innerHTML = "shorten";
 			}
 		}
 	}

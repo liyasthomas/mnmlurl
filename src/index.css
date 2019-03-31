@@ -27,24 +27,37 @@ p {
 	color: #b2b2b2;
 }
 
+.spinning {
+	display: inline-block;
+	animation: rotate360 1s infinite ease;
+}
+
+@keyframes rotate360 {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
 .main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	min-height: 100vh;
 	height: 100%;
 	width: 100%;
 	padding: 16px;
 }
 
 .form {
-	padding: 32px;
+	padding: 24px;
 	background-color: #f5f5f5;
 	border: 1px solid #eee;
 	border-radius: 8px;
-	box-shadow: 4px 4px 0 #bbb;
+	box-shadow: 4px 4px 0 #b2b2b2;
 	width: 100%;
 	max-width: 512px;
+	margin-bottom: 16px;
 }
 
 input {
