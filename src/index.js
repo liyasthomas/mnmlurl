@@ -134,3 +134,10 @@ let shorturl = async () => {
 	}
 };
 document.getElementById("sbtn").addEventListener("click", shorturl);
+
+//let r = JSON.parse(fetchJSON(endpoint)).result;
+//document.getElementById("count").innerHTML = parseInt(Object.keys(r).length) + " urls minimalized";
+//
+//fetch(endpoint + "key", {
+//	method: 'DELETE',
+//});
