@@ -1,6 +1,7 @@
-let emojis = ['🙈', '👽', '💩', '✨', '🌟', '💫', '💦', '💖', '💎', '🌈', '🎉', '🔮', ];
-let randomItem = emojis[Math.floor(Math.random() * emojis.length)];
-document.getElementById("emoji").innerHTML = randomItem;
+let bg = ['#76ecfe', '#b8affd', '#9fd6fd', '#fbf3b0', '#ffd0c6'];
+let randomBg = bg[Math.floor(Math.random() * bg.length)];
+document.getElementById("sbtn").style.backgroundColor = randomBg;
+
 let pushJSON = (url, data) => {
 	let request = new XMLHttpRequest();
 	request.open('POST', url);
@@ -75,6 +76,7 @@ let send_request = (url) => {
 	let address = endpoint + "/" + window.location.hash.substr(1);
 	// console.log(address)
 	pushJSON(address, myurl);
+	document.getElementById('output').style.display = "block";
 	document.getElementById('shortenedURL').value = window.location.href;
 	document.getElementById('sucess').innerHTML = "short url copied to clipboard 🚀";
 	copyer("shortenedURL");
@@ -96,7 +98,7 @@ let shorturl = async () => {
 	let cre = /^([a-zA-Z0-9 _-]+)$/;
 	let protocol_ok = re.test(longurl);
 	if (!protocol_ok) {
-		document.getElementById("erbox").style.color = "orangered";
+		document.getElementById("erbox").style.backgroundColor = "lightcoral";
 		document.getElementById("erbox").innerHTML = "🤔 invalid url";
 		document.getElementById("rotate").classList.remove("spinning");
 		document.getElementById("status").innerHTML = "shorten";
@@ -108,14 +110,14 @@ let shorturl = async () => {
 		} else {
 			if (cre.test(document.getElementById("custominput").value)) {
 				if (cinp()) {
-					document.getElementById("erbox").style.color = "limegreen";
+					document.getElementById("erbox").style.backgroundColor = "limegreen";
 					document.getElementById("erbox").innerHTML = "alias available 😊";
 					document.getElementById("rotate").classList.remove("spinning");
 					document.getElementById("status").innerHTML = "shorten";
 					genhash();
 					send_request(longurl);
 				} else {
-					document.getElementById("erbox").style.color = "orangered";
+					document.getElementById("erbox").style.backgroundColor = "lightcoral";
 					document.getElementById("erbox").innerHTML = "😒 alias already in use, choose another";
 					document.getElementById("custominput").placeholder = document.getElementById("custominput").value;
 					document.getElementById("custominput").value = "";
@@ -123,7 +125,7 @@ let shorturl = async () => {
 					document.getElementById("status").innerHTML = "shorten";
 				}
 			} else {
-				document.getElementById("erbox").style.color = "orangered";
+				document.getElementById("erbox").style.backgroundColor = "lightcoral";
 				document.getElementById("erbox").innerHTML = "😮 invalid custom alias, use only alphanumerics & underscore";
 				document.getElementById("custominput").placeholder = document.getElementById("custominput").value;
 				document.getElementById("custominput").value = "";
@@ -136,8 +138,8 @@ let shorturl = async () => {
 document.getElementById("sbtn").addEventListener("click", shorturl);
 
 //let r = JSON.parse(fetchJSON(endpoint)).result;
-//document.getElementById("count").innerHTML = parseInt(Object.keys(r).length) + " urls minimalized";
-//
+//document.getElementById("count").innerHTML = " &middot; " + Object.keys(r).length + " urls minimalized";
+
 //fetch(endpoint + "key", {
 //	method: 'DELETE',
 //});
