@@ -77,12 +77,12 @@
 		</header>
 		<div class="flex"></div>
 		<form class="form" action="javascript:void(0);">
+			<label for="urlinput"></label>
 			<input type="url" id="urlinput" placeholder="paste a long url">
-			<label for="urlinput">long url</label>
 			<div id="erbox"></div>
+			<label for="custominput"></label>
 			<input type="text" maxlength=20 id="custominput" placeholder="custom alias (optional)">
-			<label for="custominput">custom alias</label>
-			<button id="sbtn" type="submit"><span id="rotate">🔗</span> <span id="status">shorten</span></button>
+			<button id="sbtn" type="submit" aria-label="shorten"><span id="rotate">🔗</span> <span id="status">shorten</span></button>
 		</form>
 		<div class="form" id="output" style="display: none">
 			<div id="alias"></div>

@@ -20,7 +20,7 @@ a {
 }
 
 p {
-	max-width: 512px;
+	max-width: 600px;
 	color: #aaa;
 }
 
@@ -57,7 +57,7 @@ header {
 
 .form {
 	width: 100%;
-	max-width: 512px;
+	max-width: 600px;
 }
 
 input {
@@ -75,10 +75,6 @@ input:first-of-type {
 
 input:last-of-type {
 	border-radius: 0;
-}
-
-label {
-	display: none;
 }
 
 button {
