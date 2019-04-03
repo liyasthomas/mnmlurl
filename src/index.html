@@ -78,20 +78,22 @@
 		<div class="flex"></div>
 		<form class="form" action="javascript:void(0);">
 			<input type="url" id="urlinput" placeholder="paste a long url">
+			<label for="urlinput">long url</label>
 			<div id="erbox"></div>
 			<input type="text" maxlength=20 id="custominput" placeholder="custom alias (optional)">
+			<label for="custominput">custom alias</label>
 			<button id="sbtn" type="submit"><span id="rotate">🔗</span> <span id="status">shorten</span></button>
 		</form>
 		<div class="form" id="output" style="display: none">
 			<div id="alias"></div>
-			<input type="text" id="shortenedURL" placeholder="output">
+			<input type="text" id="shortenedURL" placeholder="output" label="short url">
 			<div id="sucess"></div>
 		</div>
 		<div class="flex"></div>
 		<footer>
 			<p id="count"></p>
-			<p><a href="https://github.com/liyasthomas/mnmlurl/issues/new" target="_blank">💁 open an issue</a></p>
-			<a href="https://liyas-thomas.firebaseapp.com" target="_blank">made with ❤️ by liyas thomas</a>
+			<p><a href="https://github.com/liyasthomas/mnmlurl/issues/new" target="_blank" rel="noopener">💁 open an issue</a></p>
+			<a href="https://liyas-thomas.firebaseapp.com" target="_blank" rel="noopener">made with ❤️ by liyas thomas</a>
 		</footer>
 	</div>
 	<script src="index.js"></script>

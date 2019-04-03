@@ -77,6 +77,10 @@ input:last-of-type {
 	border-radius: 0;
 }
 
+label {
+	display: none;
+}
+
 button {
 	width: 100%;
 	padding: 24px;
