@@ -78,8 +78,8 @@ let send_request = (url) => {
 	pushJSON(address, myurl);
 	document.getElementById('output').style.display = "block";
 	document.getElementById('shortenedURL').value = window.location.href;
-	document.getElementById('sucess').innerHTML = "short url copied to clipboard 🚀";
 	copyer("shortenedURL");
+	document.getElementById('sucess').innerHTML = "short url copied to clipboard 🚀";
 	document.getElementById("rotate").classList.remove("spinning");
 	document.getElementById("status").innerHTML = "shorten";
 };
@@ -91,7 +91,8 @@ let shorturl = async () => {
 	document.getElementById("erbox").innerHTML = "";
 	document.getElementById("sucess").innerHTML = "";
 	document.getElementById("rotate").setAttribute("class", "spinning");
-	document.getElementById("status").innerHTML = "shortening...";
+	document.getElementById("status").innerHTML = "";
+	document.getElementById('output').style.display = "none";
 	await sleep(1000);
 	let longurl = geturl();
 	let re = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/;
@@ -102,6 +103,8 @@ let shorturl = async () => {
 		document.getElementById("erbox").innerHTML = "🤔 invalid url";
 		document.getElementById("rotate").classList.remove("spinning");
 		document.getElementById("status").innerHTML = "shorten";
+		document.getElementById("sucess").innerHTML = "";
+		document.getElementById('output').style.display = "none";
 	} else {
 		document.getElementById("erbox").innerHTML = "";
 		if (document.getElementById("custominput").value == "") {
@@ -123,6 +126,8 @@ let shorturl = async () => {
 					document.getElementById("custominput").value = "";
 					document.getElementById("rotate").classList.remove("spinning");
 					document.getElementById("status").innerHTML = "shorten";
+					document.getElementById("sucess").innerHTML = "";
+					document.getElementById('output').style.display = "none";
 				}
 			} else {
 				document.getElementById("erbox").style.backgroundColor = "lightcoral";
@@ -131,6 +136,8 @@ let shorturl = async () => {
 				document.getElementById("custominput").value = "";
 				document.getElementById("rotate").classList.remove("spinning");
 				document.getElementById("status").innerHTML = "shorten";
+				document.getElementById("sucess").innerHTML = "";
+				document.getElementById('output').style.display = "none";
 			}
 		}
 	}
@@ -138,7 +145,7 @@ let shorturl = async () => {
 document.getElementById("sbtn").addEventListener("click", shorturl);
 
 //let r = JSON.parse(fetchJSON(endpoint)).result;
-//document.getElementById("count").innerHTML = " &middot; " + Object.keys(r).length + " urls minimalized";
+//document.getElementById("count").innerHTML = Object.keys(r).length + " urls minimalized";
 
 //fetch(endpoint + "key", {
 //	method: 'DELETE',

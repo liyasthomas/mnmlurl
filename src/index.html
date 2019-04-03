@@ -19,7 +19,7 @@
 	<!-- See https://goo.gl/OOhYW5 -->
 	<link rel="manifest" href="manifest.json">
 	<!-- See https://goo.gl/qRE0vM -->
-	<meta name="theme-color" content="#ffffff">
+	<meta name="theme-color" content="#f3f3f3">
 	<!-- Add to homescreen for Chrome on Android. Fallback for manifest.json -->
 	<meta name="mobile-web-app-capable" content="yes">
 	<meta name="application-name" content="mnmlurl">
@@ -35,7 +35,7 @@
 	<link rel="apple-touch-icon" sizes="192x192" href="manifest/icon-192x192.png">
 	<!-- Tile icon for Windows 8 (144x144 + tile color) -->
 	<meta name="msapplication-TileImage" content="manifest/icon-144x144.png">
-	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileColor" content="#f3f3f3">
 	<meta name="msapplication-tap-highlight" content="no">
 	<!-- OpenGraph -->
 	<meta property="og:site_name" content="mnmlurl">
@@ -72,20 +72,23 @@
 <body>
 	<div class="main">
 		<header>
+			<img src="images/manifest/icon-72x72.png" alt="" style="margin-right: 16px;"><br>
 			<h1><a href="/">mnmlurl</a></h1>
 		</header>
-		<div class="form">
+		<div class="flex"></div>
+		<form class="form" action="javascript:void(0);">
 			<input type="url" id="urlinput" placeholder="paste a long url">
 			<input type="text" maxlength=20 id="custominput" placeholder="custom alias (optional)">
-			<button id="sbtn" type="button"><span id="rotate">🔗</span> <span id="status">shorten</span></button>
+			<button id="sbtn" type="submit"><span id="rotate">🔗</span> <span id="status">shorten</span></button>
 			<p id="erbox"></p>
-		</div>
+		</form>
 		<div class="form" id="output" style="display: none">
 			<input type="text" id="shortenedURL" placeholder="output">
 			<p id="sucess" style="background-color: limegreen;"></p>
 		</div>
+		<div class="flex"></div>
 		<footer class="infos">
-			<p>🚨 don't shorten sensitive informations <span id="count"></span></p>
+			<p id="count"></p>
 			<p><a href="https://github.com/liyasthomas/mnmlurl/issues/new">💁 open an issue</a></p>
 			<strong><a href="https://liyas-thomas.firebaseapp.com">made with ❤️ by liyas thomas</a></strong>
 		</footer>
