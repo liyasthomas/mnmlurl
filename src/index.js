@@ -58,6 +58,7 @@ let copyer = (containerid) => {
 			range.select();
 			document.execCommand("copy");
 		}
+		document.selection.empty();
 	} else if (window.getSelection) {
 		if (elt.nodeName.toLowerCase() === "input") {
 			document.getElementById(containerid).select();
@@ -69,6 +70,7 @@ let copyer = (containerid) => {
 			window.getSelection().addRange(range_);
 			document.execCommand("copy");
 		}
+		window.getSelection().removeAllRanges();
 	}
 };
 let send_request = (url) => {
