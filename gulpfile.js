@@ -47,14 +47,14 @@ function m_css() {
 
 function m_js() {
 	return gulp
-		.src(['comp/index.js'])
+		.src(['comp/index.js', 'src/head.js'])
 		.pipe(uglify())
 		.pipe(gulp.dest('output'));
 }
 
 function copy_extras() {
 	return gulp
-		.src(['src/manifest.json', 'src/favicon.ico', 'src/images/**/*', 'src/head.js', 'src/sw.js'])
+		.src(['src/manifest.json', 'src/favicon.ico', 'src/images/**/*', 'src/sw.js'])
 		.pipe(gulp.dest('output'));
 }
 
