@@ -87,7 +87,6 @@ let send_request = (url) => {
 	sucess.innerHTML = "short url copied to clipboard 🚀";
 	rotate.classList.remove("spinning");
 	status.innerHTML = "shorten";
-	alias.innerHTML = "shortened 🎉";
 };
 
 function sleep(ms) {
@@ -115,6 +114,7 @@ let shorturl = async () => {
 		if (custominput.value == "") {
 			genhash();
 			send_request(longurl);
+			alias.innerHTML = "shortened 🎉";
 		} else {
 			if (cre.test(custominput.value)) {
 				if (cinp()) {

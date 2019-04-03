@@ -79,12 +79,12 @@ input:last-of-type {
 
 button {
 	width: 100%;
-	padding: 24px;
-	font-size: 18px;
+	padding: 16px;
+	font-size: 20px;
 	border-radius: 0 0 24px 24px;
 	border: 0;
 	cursor: pointer;
-	background: linear-gradient(135deg, #52A0FD, #00e2fa);
+	background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59);
 	color: #fff;
 	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
 	margin-bottom: 16px;
@@ -106,10 +106,10 @@ button {
 
 #alias {
 	border-radius: 24px 24px 0 0;
-	background: linear-gradient(-135deg, #02aab0, #00cdac);
+	background: linear-gradient(135deg, #11998e, #38ef7d);
 }
 
 #sucess {
 	border-radius: 0 0 24px 24px;
-	background: linear-gradient(-135deg, #02aab0, #00cdac);
+	background: linear-gradient(-135deg, #11998e, #38ef7d);
 }
