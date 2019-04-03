@@ -11,6 +11,7 @@ body {
 	-webkit-user-select: none;
 	user-select: none;
 	text-align: center;
+	color: #333;
 	background: linear-gradient(120deg, #fdfbfb, #ebedee);
 }
 
@@ -70,7 +71,7 @@ input {
 }
 
 input:first-of-type {
-	border-radius: 24px 24px 0 0;
+	border-radius: 32px 32px 0 0;
 }
 
 input:last-of-type {
@@ -79,9 +80,9 @@ input:last-of-type {
 
 button {
 	width: 100%;
-	padding: 16px;
-	font-size: 20px;
-	border-radius: 0 0 24px 24px;
+	padding: 24px;
+	font-size: 18px;
+	border-radius: 0 0 32px 32px;
 	border: 0;
 	cursor: pointer;
 	background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59);
@@ -105,11 +106,11 @@ button {
 }
 
 #alias {
-	border-radius: 24px 24px 0 0;
+	border-radius: 32px 32px 0 0;
 	background: linear-gradient(135deg, #11998e, #38ef7d);
 }
 
 #sucess {
-	border-radius: 0 0 24px 24px;
+	border-radius: 0 0 32px 32px;
 	background: linear-gradient(-135deg, #11998e, #38ef7d);
 }
