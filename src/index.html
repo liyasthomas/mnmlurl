@@ -78,13 +78,14 @@
 		<div class="flex"></div>
 		<form class="form" action="javascript:void(0);">
 			<input type="url" id="urlinput" placeholder="paste a long url">
+			<div id="erbox"></div>
 			<input type="text" maxlength=20 id="custominput" placeholder="custom alias (optional)">
 			<button id="sbtn" type="submit"><span id="rotate">🔗</span> <span id="status">shorten</span></button>
-			<p id="erbox"></p>
 		</form>
 		<div class="form" id="output" style="display: none">
+			<div id="alias"></div>
 			<input type="text" id="shortenedURL" placeholder="output">
-			<p id="sucess" style="background-color: limegreen;"></p>
+			<div id="sucess"></div>
 		</div>
 		<div class="flex"></div>
 		<footer>

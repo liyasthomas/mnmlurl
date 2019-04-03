@@ -58,7 +58,6 @@ let copyer = (containerid) => {
 			range.select();
 			document.execCommand("copy");
 		}
-		document.selection.empty();
 	} else if (window.getSelection) {
 		if (elt.nodeName.toLowerCase() === "input") {
 			document.getElementById(containerid).select();
@@ -70,7 +69,6 @@ let copyer = (containerid) => {
 			window.getSelection().addRange(range_);
 			document.execCommand("copy");
 		}
-		window.getSelection().removeAllRanges();
 	}
 };
 let send_request = (url) => {
@@ -84,6 +82,7 @@ let send_request = (url) => {
 	document.getElementById('sucess').innerHTML = "short url copied to clipboard 🚀";
 	document.getElementById("rotate").classList.remove("spinning");
 	document.getElementById("status").innerHTML = "shorten";
+	document.getElementById("alias").innerHTML = "shortened 🎉";
 };
 
 function sleep(ms) {
@@ -101,7 +100,6 @@ let shorturl = async () => {
 	let cre = /^([a-zA-Z0-9 _-]+)$/;
 	let protocol_ok = re.test(longurl);
 	if (!protocol_ok) {
-		document.getElementById("erbox").style.backgroundColor = "lightcoral";
 		document.getElementById("erbox").innerHTML = "🤔 invalid url";
 		document.getElementById("rotate").classList.remove("spinning");
 		document.getElementById("status").innerHTML = "shorten";
@@ -115,14 +113,12 @@ let shorturl = async () => {
 		} else {
 			if (cre.test(document.getElementById("custominput").value)) {
 				if (cinp()) {
-					document.getElementById("erbox").style.backgroundColor = "limegreen";
-					document.getElementById("erbox").innerHTML = "alias available 😊";
+					document.getElementById("alias").innerHTML = "alias available ✨";
 					document.getElementById("rotate").classList.remove("spinning");
 					document.getElementById("status").innerHTML = "shorten";
 					genhash();
 					send_request(longurl);
 				} else {
-					document.getElementById("erbox").style.backgroundColor = "lightcoral";
 					document.getElementById("erbox").innerHTML = "😒 alias already in use, choose another";
 					document.getElementById("custominput").placeholder = document.getElementById("custominput").value;
 					document.getElementById("custominput").value = "";
@@ -132,7 +128,6 @@ let shorturl = async () => {
 					document.getElementById('output').style.display = "none";
 				}
 			} else {
-				document.getElementById("erbox").style.backgroundColor = "lightcoral";
 				document.getElementById("erbox").innerHTML = "😮 invalid custom alias, use only alphanumerics & underscore";
 				document.getElementById("custominput").placeholder = document.getElementById("custominput").value;
 				document.getElementById("custominput").value = "";
