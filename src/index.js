@@ -106,7 +106,7 @@ let shorturl = async () => {
     let cre = /^([a-zA-Z0-9 _-]+)$/;
     let protocol_ok = re.test(longurl);
     if (!protocol_ok) {
-        erbox.innerHTML = "🤔 invalid url";
+        erbox.innerHTML = "😒 invalid url";
         rotate.classList.remove("spinning");
         rotate.style.display = "none";
         status.innerHTML = "shorten";
