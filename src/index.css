@@ -4,6 +4,12 @@
 	font-family: 'Nunito', 'Roboto', 'Noto', sans-serif;
 }
 
+@font-face {
+	font-family: 'Nunito';
+	font-display: auto;
+	src: local('Nunito Regular'), local('Nunito-Regular'), url(https://fonts.gstatic.com/s/nunito/v10/XRXV3I6Li01BKofINeaB.woff2) format('woff2');
+}
+
 body {
 	margin: 0;
 	-webkit-tap-highlight-color: transparent;
