@@ -50,7 +50,7 @@
 	<meta name="twitter:image" content="manifest/icon-144x144.png">
 	<!-- Web Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
-	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="stylesheet" href="index.css">
 	<script>
 		if ('serviceWorker' in navigator) {
 			window.addEventListener('load', function() {
@@ -73,12 +73,13 @@
 		</header>
 		<div class="flex"></div>
 		<form class="form" action="javascript:void(0);">
-			<label for="urlinput"></label>
 			<input type="url" id="urlinput" placeholder="paste a long url">
 			<div id="erbox"></div>
-			<label for="custominput"></label>
 			<input type="text" maxlength=20 id="custominput" placeholder="custom alias (optional)">
-			<button id="sbtn" type="submit" aria-label="shorten"><span id="rotate" style="display: none;">◡</span><span id="status">shorten</span></button>
+			<button id="sbtn" type="submit" aria-label="shorten">
+				<span id="rotate" style="display: none;">◡</span>
+				<span id="status">shorten</span>
+			</button>
 		</form>
 		<div class="form" id="output" style="display: none">
 			<div id="alias"></div>

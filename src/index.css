@@ -19,6 +19,8 @@ body {
 	text-align: center;
 	color: #333;
 	background: linear-gradient(120deg, #fdfbfb, #ebedee);
+	animation: gradient 3s ease infinite;
+	background-size: 150% 150%;
 }
 
 a {
@@ -73,7 +75,7 @@ input {
 	border: 0;
 	font-size: 18px;
 	font-weight: bold;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 }
 
 input:first-of-type {
@@ -91,12 +93,28 @@ button {
 	border-radius: 0 0 32px 32px;
 	border: 0;
 	cursor: pointer;
-	background: linear-gradient(135deg, #12c2e9, #c471ed, #f64f59);
+	background: linear-gradient(120deg, #12c2e9, #c471ed, #f64f59);
+	animation: gradient 3s ease infinite;
+	background-size: 150% 150%;
 	color: #fff;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
 	margin-bottom: 16px;
 	font-weight: bold;
 	letter-spacing: 1px;
+}
+
+#erbox {
+	background: linear-gradient(120deg, #ff416c, #ff4b2b);
+}
+
+#alias {
+	border-radius: 32px 32px 0 0;
+	background: linear-gradient(120deg, #1fa2ff, #12d8fa, #a6ffcb);
+}
+
+#sucess {
+	border-radius: 0 0 32px 32px;
+	background: linear-gradient(120deg, #1fa2ff, #12d8fa, #a6ffcb);
 }
 
 #erbox,
@@ -104,19 +122,21 @@ button {
 #sucess {
 	line-height: 3;
 	color: #fff;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+	animation: gradient 3s ease infinite;
+	background-size: 150% 150%;
 }
 
-#erbox {
-	background: linear-gradient(135deg, #ff416c, #ff4b2b);
-}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%
+	}
 
-#alias {
-	border-radius: 32px 32px 0 0;
-	background: linear-gradient(135deg, #11998e, #38ef7d);
-}
+	50% {
+		background-position: 100% 50%
+	}
 
-#sucess {
-	border-radius: 0 0 32px 32px;
-	background: linear-gradient(-135deg, #11998e, #38ef7d);
+	100% {
+		background-position: 0% 50%
+	}
 }
