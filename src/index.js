@@ -86,6 +86,7 @@ let send_request = (url) => {
 	copyer("shortenedURL");
 	sucess.innerHTML = "short url copied to clipboard 🚀";
 	rotate.classList.remove("spinning");
+	rotate.style.display = "none";
 	status.innerHTML = "shorten";
 };
 
@@ -95,6 +96,7 @@ function sleep(ms) {
 let shorturl = async () => {
 	erbox.innerHTML = "";
 	sucess.innerHTML = "";
+	rotate.style.display = "inline-block";
 	rotate.setAttribute("class", "spinning");
 	status.innerHTML = "";
 	output.style.display = "none";
@@ -104,8 +106,9 @@ let shorturl = async () => {
 	let cre = /^([a-zA-Z0-9 _-]+)$/;
 	let protocol_ok = re.test(longurl);
 	if (!protocol_ok) {
-		erbox.innerHTML = "🤔 invalid url";
+		erbox.innerHTML = "😒 invalid url";
 		rotate.classList.remove("spinning");
+		rotate.style.display = "none";
 		status.innerHTML = "shorten";
 		sucess.innerHTML = "";
 		output.style.display = "none";
@@ -120,6 +123,7 @@ let shorturl = async () => {
 				if (cinp()) {
 					alias.innerHTML = "alias available ✨";
 					rotate.classList.remove("spinning");
+					rotate.style.display = "none";
 					status.innerHTML = "shorten";
 					genhash();
 					send_request(longurl);
@@ -128,6 +132,7 @@ let shorturl = async () => {
 					custominput.placeholder = custominput.value;
 					custominput.value = "";
 					rotate.classList.remove("spinning");
+					rotate.style.display = "none";
 					status.innerHTML = "shorten";
 					sucess.innerHTML = "";
 					output.style.display = "none";
@@ -137,6 +142,7 @@ let shorturl = async () => {
 				custominput.placeholder = custominput.value;
 				custominput.value = "";
 				rotate.classList.remove("spinning");
+				rotate.style.display = "none";
 				status.innerHTML = "shorten";
 				sucess.innerHTML = "";
 				output.style.display = "none";
