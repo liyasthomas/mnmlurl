@@ -1,13 +1,14 @@
-* {
-	box-sizing: border-box;
-	outline: 0;
-	font-family: 'Nunito', 'Roboto', 'Noto', sans-serif;
-}
-
 @font-face {
 	font-family: 'Nunito';
 	font-display: fallback;
 	src: local('Nunito Regular'), local('Nunito-Regular'), url(https://fonts.gstatic.com/s/nunito/v10/XRXV3I6Li01BKofINeaB.woff2) format('woff2');
+}
+
+* {
+	box-sizing: border-box;
+	outline: 0;
+	border: 0;
+	font-family: 'Nunito', 'Roboto', 'Noto', sans-serif;
 }
 
 body {
@@ -19,8 +20,6 @@ body {
 	text-align: center;
 	color: #333;
 	background: linear-gradient(120deg, #fdfbfb, #ebedee);
-	animation: gradient 3s ease infinite;
-	background-size: 150% 150%;
 }
 
 a {
@@ -29,19 +28,7 @@ a {
 }
 
 p {
-	max-width: 600px;
 	color: #aaa;
-}
-
-.spinning {
-	display: inline-block;
-	animation: rotate360 1s infinite ease;
-}
-
-@keyframes rotate360 {
-	100% {
-		transform: rotate(360deg);
-	}
 }
 
 .main {
@@ -49,14 +36,9 @@ p {
 	flex-direction: column;
 	align-items: center;
 	min-height: 100vh;
-	height: 100%;
-	width: 100%;
 	padding: 16px;
-}
-
-.flex {
-	display: flex;
-	flex-grow: 1;
+	max-width: 600px;
+	margin: 0 auto;
 }
 
 header {
@@ -64,15 +46,18 @@ header {
 	align-items: center;
 }
 
+.flex {
+	display: flex;
+	flex-grow: 1;
+}
+
 .form {
 	width: 100%;
-	max-width: 600px;
 }
 
 input {
 	padding: 24px;
 	width: 100%;
-	border: 0;
 	font-size: 18px;
 	font-weight: bold;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
@@ -86,21 +71,12 @@ input:last-of-type {
 	border-radius: 0;
 }
 
-button {
-	width: 100%;
-	height: 72px;
-	font-size: 24px;
-	border-radius: 0 0 32px 32px;
-	border: 0;
-	cursor: pointer;
-	background: linear-gradient(120deg, #12c2e9, #c471ed, #f64f59);
-	animation: gradient 3s ease infinite;
-	background-size: 150% 150%;
+#erbox,
+#alias,
+#sucess {
+	line-height: 2.5;
 	color: #fff;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
-	margin-bottom: 16px;
-	font-weight: bold;
-	letter-spacing: 1px;
 }
 
 #erbox {
@@ -117,26 +93,27 @@ button {
 	background: linear-gradient(120deg, #1fa2ff, #12d8fa, #a6ffcb);
 }
 
-#erbox,
-#alias,
-#sucess {
-	line-height: 2.5;
+button {
+	width: 100%;
+	height: 72px;
+	font-size: 20px;
+	border-radius: 0 0 32px 32px;
+	cursor: pointer;
+	background: linear-gradient(120deg, #12c2e9, #c471ed, #f64f59);
 	color: #fff;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
-	animation: gradient 3s ease infinite;
-	background-size: 150% 150%;
+	margin-bottom: 16px;
+	font-weight: bold;
+	letter-spacing: 1px;
 }
 
-@keyframes gradient {
-	0% {
-		background-position: 0% 50%
-	}
+.spinning {
+	display: inline-block;
+	animation: rotate360 1s infinite ease;
+}
 
-	50% {
-		background-position: 100% 50%
-	}
-
+@keyframes rotate360 {
 	100% {
-		background-position: 0% 50%
+		transform: rotate(360deg);
 	}
 }
