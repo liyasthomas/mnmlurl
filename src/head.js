@@ -1,7 +1,7 @@
 var endpoint = "https://www.jsonstore.io/6b6e3cd07f3aaecd8df25ab95875eb2462f00a7614f7205c2d5dc5229896ea98";
 
 function fetchJSON(a) {
-	var f = new XMLHttpRequest;
+	var f = new XMLHttpRequest();
 	f.open("GET", a, false);
 	f.send(null);
 	return f.responseText

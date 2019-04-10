@@ -1,7 +1,7 @@
 {
 	"name": "mnmlurl",
 	"short_name": "mnmlurl",
-	"description": "minimal url",
+	"description": "Minimal URL is a modern URL shortener with support for custom alias",
 	"icons": [
 		{
 			"src": "manifest/icon-48x48.png",

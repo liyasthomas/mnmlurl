@@ -17,7 +17,7 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 # mnmlurl <img src="https://raw.githubusercontent.com/liyasthomas/mnmlurl/master/src/images/manifest/icon-48x48.png" alt="mnmlurl" width="32">
 
-### :link: minimal url by [Liyas Thomas](https://github.com/liyasthomas)
+### :link: Minimal URL is a modern URL shortener with support for custom alias by [Liyas Thomas](https://github.com/liyasthomas)
 
 ### Features :sparkles:
 
@@ -29,7 +29,7 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 :zap: **Performance**: mnmlurl is a thin web app on top of HTML, CSS and JavaScript. Being a Progressive web app, mnmlurl offers lightning fast loading and offline support via workbox and service worker.
 
-:hash: **Hashtaged**: Short URLs are hashtaged suffix (mnmlurl.ml/#x)
+:information_desk_person: **Browser extension**:  Get mnmlurl [Chrome browser extension](https://github.com/liyasthomas/mnmlurl-extension)
 
 ---
 
