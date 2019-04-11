@@ -18,17 +18,12 @@ body {
 	-webkit-user-select: none;
 	user-select: none;
 	text-align: center;
-	color: #333;
 	background: linear-gradient(120deg, #fdfbfb, #ebedee);
 }
 
 a {
 	text-decoration: none;
 	color: inherit;
-}
-
-p {
-	color: #aaa;
 }
 
 .main {
