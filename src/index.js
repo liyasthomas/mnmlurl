@@ -84,10 +84,10 @@ let send_request = (url) => {
 	output.style.display = "block";
 	shortenedURL.value = window.location.href;
 	copyer("shortenedURL");
-	sucess.innerHTML = "short url copied to clipboard 🚀";
+	sucess.innerHTML = "Short url copied to clipboard 🚀";
 	rotate.classList.remove("spinning");
 	rotate.style.display = "none";
-	status.innerHTML = "shorten";
+	status.innerHTML = "Shorten";
 };
 
 function sleep(ms) {
@@ -106,10 +106,10 @@ let shorturl = async () => {
 	let cre = /^([a-zA-Z0-9 _-]+)$/;
 	let protocol_ok = re.test(longurl);
 	if (!protocol_ok) {
-		erbox.innerHTML = "😒 invalid url";
+		erbox.innerHTML = "Invalid url 😒";
 		rotate.classList.remove("spinning");
 		rotate.style.display = "none";
-		status.innerHTML = "shorten";
+		status.innerHTML = "Shorten";
 		sucess.innerHTML = "";
 		output.style.display = "none";
 	} else {
@@ -117,33 +117,33 @@ let shorturl = async () => {
 		if (custominput.value == "") {
 			genhash();
 			send_request(longurl);
-			alias.innerHTML = "shortened 🎉";
+			alias.innerHTML = "Shortened 🎉";
 		} else {
 			if (cre.test(custominput.value)) {
 				if (cinp()) {
-					alias.innerHTML = "alias available ✨";
+					alias.innerHTML = "Alias available ✨";
 					rotate.classList.remove("spinning");
 					rotate.style.display = "none";
-					status.innerHTML = "shorten";
+					status.innerHTML = "Shorten";
 					genhash();
 					send_request(longurl);
 				} else {
-					erbox.innerHTML = "😒 alias already in use, choose another";
+					erbox.innerHTML = "😒 Alias already in use, choose another";
 					custominput.placeholder = custominput.value;
 					custominput.value = "";
 					rotate.classList.remove("spinning");
 					rotate.style.display = "none";
-					status.innerHTML = "shorten";
+					status.innerHTML = "Shorten";
 					sucess.innerHTML = "";
 					output.style.display = "none";
 				}
 			} else {
-				erbox.innerHTML = "😮 invalid custom alias, use only alphanumerics & underscore";
+				erbox.innerHTML = "😮 Invalid custom alias, use only alphanumerics & underscore";
 				custominput.placeholder = custominput.value;
 				custominput.value = "";
 				rotate.classList.remove("spinning");
 				rotate.style.display = "none";
-				status.innerHTML = "shorten";
+				status.innerHTML = "Shorten";
 				sucess.innerHTML = "";
 				output.style.display = "none";
 			}

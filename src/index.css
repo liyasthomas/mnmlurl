@@ -18,12 +18,14 @@ body {
 	-webkit-user-select: none;
 	user-select: none;
 	text-align: center;
-	background: linear-gradient(120deg, #fdfbfb, #ebedee);
+	background: #f3f3f3;
 }
 
 a {
 	text-decoration: none;
 	color: inherit;
+	display: inline-flex;
+	align-items: center;
 }
 
 .main {
@@ -48,6 +50,7 @@ header {
 
 .form {
 	width: 100%;
+	margin-bottom: 16px;
 }
 
 input {
@@ -97,13 +100,11 @@ button {
 	background: linear-gradient(120deg, #12c2e9, #c471ed, #f64f59);
 	color: #fff;
 	box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
-	margin-bottom: 16px;
 	font-weight: bold;
 	letter-spacing: 1px;
 }
 
 .spinning {
-	display: inline-block;
 	animation: rotate360 1s infinite ease;
 }
 
