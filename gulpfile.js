@@ -54,7 +54,9 @@ function m_js() {
 
 function copy_extras() {
 	return gulp
-		.src(['src/manifest.json', 'src/favicon.ico', 'src/images/**/*', 'src/sw.js'])
+		.src(['src/manifest.json', 'src/favicon.ico', 'src/icons/*', 'src/sw.js'], {
+			base: "src"
+		})
 		.pipe(gulp.dest('output'));
 }
 
