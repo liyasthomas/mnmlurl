@@ -78,17 +78,17 @@ input:last-of-type {
 }
 
 #erbox {
-	background: linear-gradient(120deg, #ff416c, #ff4b2b);
+	background-color: #f44336;
 }
 
 #alias {
 	border-radius: 32px 32px 0 0;
-	background: linear-gradient(120deg, #1fa2ff, #12d8fa, #a6ffcb);
+	background-color: #58DE71;
 }
 
 #sucess {
 	border-radius: 0 0 32px 32px;
-	background: linear-gradient(120deg, #1fa2ff, #12d8fa, #a6ffcb);
+	background-color: #58DE71;
 }
 
 button {
