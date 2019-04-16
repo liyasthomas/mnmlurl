@@ -19,6 +19,12 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 ### :link: Minimal URL is a modern URL shortener with support for custom alias by [Liyas Thomas](https://github.com/liyasthomas)
 
+<div align="center">
+  <br>
+  <img src="src/icons/screely.png" alt="mnmlurl" width="100%">
+  <br>
+</div>
+
 ### Features :sparkles:
 
 :heart_eyes: **URL shortning made simple**: mnmlurl uses [jsonstore.io](https://www.jsonstore.io) to  store data on an endpoint JSON file using HTTPS requests. It works on any url.
@@ -33,7 +39,7 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 ---
 
-### Demo
+## Demo
 
 [mnmlurl.ml](https://mnmlurl.ml)
 
