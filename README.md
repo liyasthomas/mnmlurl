@@ -15,7 +15,7 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 [![Build Status](https://travis-ci.org/liyasthomas/mnmlurl.svg?branch=master)](https://travis-ci.org/liyasthomas/mnmlurl) [![GitHub release](https://img.shields.io/github/release/liyasthomas/mnmlurl/all.svg)](https://github.com/liyasthomas/mnmlurl/releases/latest) [![repo size](https://img.shields.io/github/repo-size/liyasthomas/mnmlurl.svg)](https://github.com/liyasthomas/mnmlurl/archive/master.zip) [![license](https://img.shields.io/github/license/liyasthomas/mnmlurl.svg)](https://github.com/liyasthomas/mnmlurl/blob/master/LICENSE) [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/liyasthomas/mnmlurl/issues) [![Website](https://img.shields.io/website-up-down-green-red/https/shields.io.svg?label=website)](https://liyas-thomas.firebaseapp.com) [![Donate](https://img.shields.io/badge/$-donate-ff69b4.svg)](https://www.paypal.me/liyascthomas)
 
-# mnmlurl <img src="https://raw.githubusercontent.com/liyasthomas/mnmlurl/master/src/images/manifest/icon-48x48.png" alt="mnmlurl" width="32">
+# <img src="src/icons/icon-48x48.png" alt="mnmlurl" width="32"> mnmlurl
 
 ### :link: Minimal URL is a modern URL shortener with support for custom alias by [Liyas Thomas](https://github.com/liyasthomas)
 
