@@ -16,7 +16,7 @@ let pushJSON = (url, data) => {
 let cinp = () => {
 	erbox.innerHTML = "";
 	let cival = custominput.value;
-	let res = JSON.parse(fetchJSON(endpoint + '/' + cival));
+	let res = JSON.parse(fetchJSON(`${endpoint}/${cival}`));
 	let data = res.result;
 	if (data != null) {
 		return false;
@@ -45,7 +45,7 @@ let genhash = () => {
 };
 let check_is_unique = () => {
 	let url = window.location.hash.substr(1);
-	let res = JSON.parse(fetchJSON(endpoint + '/' + url));
+	let res = JSON.parse(fetchJSON(`${endpoint}/${url}`));
 	let data = res.result;
 	if (data != null) {
 		genhash();
@@ -78,7 +78,7 @@ let copyer = (containerid) => {
 };
 let send_request = (url) => {
 	let myurl = url;
-	let address = endpoint + "/" + window.location.hash.substr(1);
+	let address = `${endpoint}/${window.location.hash.substr(1)}`;
 	// console.log(address)
 	pushJSON(address, myurl);
 	output.style.display = "block";
