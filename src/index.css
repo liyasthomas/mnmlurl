@@ -1,9 +1,3 @@
-@font-face {
-	font-family: 'Nunito';
-	font-display: fallback;
-	src: local('Nunito Regular'), local('Nunito-Regular'), url(https://fonts.gstatic.com/s/nunito/v10/XRXV3I6Li01BKofINeaB.woff2) format('woff2');
-}
-
 * {
 	box-sizing: border-box;
 	outline: 0;
