@@ -175,7 +175,7 @@ let deferredPrompt = null
 window.addEventListener('beforeinstallprompt', (e) => {
 	deferredPrompt = e
 })
-let installPWA = async () => {
+function installPWA() {
 	if (deferredPrompt) {
 		deferredPrompt.prompt()
 		deferredPrompt.userChoice.then(({
