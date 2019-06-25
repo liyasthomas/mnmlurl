@@ -1,7 +1,6 @@
 const erbox = document.getElementById('erbox')
 const custominput = document.getElementById('custominput')
 const output = document.getElementById('output')
-const rotate = document.getElementById('rotate')
 const status = document.getElementById('status')
 const alias = document.getElementById('alias')
 const sucess = document.getElementById('sucess')
@@ -85,10 +84,8 @@ let send_request = (url) => {
 	output.style.display = 'block'
 	shortenedURL.value = window.location.href
 	copyer('shortenedURL')
-	sucess.innerHTML = 'Short url copied to clipboard 🚀'
-	rotate.classList.remove('spinning')
-	rotate.style.display = 'none'
-	status.innerHTML = 'Shorten'
+	sucess.innerHTML = 'short url copied to clipboard'
+	status.innerHTML = 'shorten'
 }
 
 function sleep(ms) {
@@ -97,9 +94,7 @@ function sleep(ms) {
 let shorturl = async () => {
 	erbox.innerHTML = ''
 	sucess.innerHTML = ''
-	rotate.style.display = 'inline-block'
-	rotate.setAttribute('class', 'spinning')
-	status.innerHTML = ''
+	status.innerHTML = 'shortening...'
 	output.style.display = 'none'
 	await sleep(1000)
 	let longurl = geturl()
@@ -107,10 +102,8 @@ let shorturl = async () => {
 	let cre = /^([a-zA-Z0-9 _-]+)$/
 	let protocol_ok = re.test(longurl)
 	if (!protocol_ok) {
-		erbox.innerHTML = 'Invalid url 😒'
-		rotate.classList.remove('spinning')
-		rotate.style.display = 'none'
-		status.innerHTML = 'Shorten'
+		erbox.innerHTML = 'invalid url'
+		status.innerHTML = 'shorten'
 		sucess.innerHTML = ''
 		output.style.display = 'none'
 	} else {
@@ -118,33 +111,27 @@ let shorturl = async () => {
 		if (custominput.value == '') {
 			genhash()
 			send_request(longurl)
-			alias.innerHTML = 'Shortened 🎉'
+			alias.innerHTML = 'shortened'
 		} else {
 			if (cre.test(custominput.value)) {
 				if (cinp()) {
-					alias.innerHTML = 'Alias available ✨'
-					rotate.classList.remove('spinning')
-					rotate.style.display = 'none'
-					status.innerHTML = 'Shorten'
+					alias.innerHTML = 'alias available'
+					status.innerHTML = 'shorten'
 					genhash()
 					send_request(longurl)
 				} else {
-					erbox.innerHTML = '😒 Alias already in use, choose another'
+					erbox.innerHTML = 'alias already in use, choose another'
 					custominput.placeholder = custominput.value
 					custominput.value = ''
-					rotate.classList.remove('spinning')
-					rotate.style.display = 'none'
-					status.innerHTML = 'Shorten'
+					status.innerHTML = 'shorten'
 					sucess.innerHTML = ''
 					output.style.display = 'none'
 				}
 			} else {
-				erbox.innerHTML = '😮 Invalid custom alias, use only alphanumerics & underscore'
+				erbox.innerHTML = 'invalid custom alias, use only alphanumerics & underscore'
 				custominput.placeholder = custominput.value
 				custominput.value = ''
-				rotate.classList.remove('spinning')
-				rotate.style.display = 'none'
-				status.innerHTML = 'Shorten'
+				status.innerHTML = 'shorten'
 				sucess.innerHTML = ''
 				output.style.display = 'none'
 			}
@@ -155,5 +142,5 @@ sbtn.addEventListener('click', shorturl)
 // fetch(endpoint + "/key", {
 //	method: 'DELETE',
 // });
-let r = JSON.parse(fetchJSON(endpoint)).result;
-document.getElementById("count").innerHTML = Object.keys(r).length + " urls minimalized";
+// let r = JSON.parse(fetchJSON(endpoint)).result;
+// document.getElementById("count").innerHTML = Object.keys(r).length + " urls minimalized";

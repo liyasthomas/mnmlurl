@@ -49,7 +49,7 @@
 	<meta name="twitter:description" content="Minimal URL is a modern URL shortener with support for custom alias">
 	<meta name="twitter:image" content="icons/icon-144x144.png">
 	<!-- Web Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Product+Sans:500,700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="index.css">
 	<script>
 		if ('serviceWorker' in navigator) {
@@ -67,21 +67,14 @@
 
 <body>
 	<main class="main">
-		<header>
-			<h1>
-				<a href="/"><img src="icons/logo.svg" alt="" style="height: 32px; margin-right: 16px;">mnmlurl</a>
-			</h1>
-		</header>
-		<div class="flex"></div>
 		<form class="form" action="javascript:void(0);">
 			<input type="url" id="urlinput" placeholder="paste a long url" label="paste a long url">
-			<div id="erbox"></div>
 			<input type="text" maxlength=20 id="custominput" placeholder="custom alias (optional)" label="custom alias (optional)">
 			<button id="sbtn" type="submit" aria-label="Shorten">
-				<span id="rotate" style="display: none;">◡</span>
-				<span id="status">Shorten</span>
+				<span id="status">shorten</span>
 			</button>
 		</form>
+		<div id="erbox"></div>
 		<div class="form" id="output" style="display: none">
 			<div id="alias"></div>
 			<input type="text" id="shortenedURL" placeholder="Output" label="short url">
@@ -89,16 +82,12 @@
 		</div>
 		<div class="flex"></div>
 		<footer>
-			<h3>
-				<button id="installPWA" onclick="installPWA()" style="display: inline-flex; width: auto; border-radius: 16px; padding: 8px 16px; height: auto; margin-right: 24px;">
-					<img src="icons/pwalogo.svg" alt="PWA" style="height: 16px;">
-				</button>
-				<a href="https://github.com/liyasthomas/mnmlurl-extension" target="_blank" rel="noopener">Get browser extension ✨</a>
-			</h3>
+			<button id="installPWA" onclick="installPWA()">
+				<img src="icons/pwalogo.svg" alt="PWA" style="height: 16px;">
+			</button>
+			<a href="https://github.com/liyasthomas/mnmlurl-extension" target="_blank" rel="noopener" style="margin: 0 16px;">Get browser extension</a>
+			<a href="https://github.com/liyasthomas/mnmlurl" target="_blank" rel="noopener" style="margin: 0 16px;"><img src="icons/github.svg" alt="" style="margin-right: 8px;"></a>
 			<p id="count"></p>
-			<strong>
-				<a href="https://github.com/liyasthomas/mnmlurl" target="_blank" rel="noopener"><img src="icons/github.svg" alt="" style="margin-right: 8px;">GitHub</a>
-			</strong>
 		</footer>
 	</main>
 	<script src="index.js"></script>
