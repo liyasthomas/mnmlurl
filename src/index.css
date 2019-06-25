@@ -11,7 +11,8 @@ body {
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
 	user-select: none;
-	font-size: 18px;
+	font-size: 64px;
+	color: #333;
 }
 
 a {
@@ -31,6 +32,7 @@ footer {
 	display: flex;
 	align-items: center;
 	padding: 16px 32px;
+	font-size: 18px;
 }
 
 .flex {
@@ -45,7 +47,9 @@ footer {
 input {
 	padding: 16px 32px;
 	width: 100%;
-	font-size: 64px;
+	font-size: inherit;
+	color: inherit;
+	font-weight: 700;
 }
 
 ::placeholder {
@@ -60,27 +64,42 @@ input {
 #erbox {
 	padding: 16px 32px;
 	color: #f44336;
-	font-size: 64px;
+	animation: fadeout;
+	animation-fill-mode: forwards;
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
 #alias {
 	padding: 16px 32px;
 	color: #58DE71;
-	font-size: 64px;
 }
 
 #sucess {
 	padding: 16px 32px;
 	color: #58DE71;
-	font-size: 64px;
 }
 
 button {
 	padding: 16px 32px;
-	font-size: 64px;
-	cursor: pointer;
 	background: linear-gradient(120deg, #12c2e9, #c471ed, #f64f59);
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
+	font-size: inherit;
 	font-weight: 700;
+	cursor: pointer;
+}
+
+@media all and (max-width: 720px) {
+	body {
+		font-size: 32px;
+	}
 }

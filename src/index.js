@@ -14,6 +14,7 @@ let pushJSON = (url, data) => {
 }
 let cinp = () => {
 	erbox.innerHTML = ''
+	erbox.style.display = 'none'
 	let cival = custominput.value
 	let res = JSON.parse(fetchJSON(`${endpoint}/${cival}`))
 	let data = res.result
@@ -93,6 +94,7 @@ function sleep(ms) {
 }
 let shorturl = async () => {
 	erbox.innerHTML = ''
+	erbox.style.display = 'none'
 	sucess.innerHTML = ''
 	status.innerHTML = 'shortening...'
 	output.style.display = 'none'
@@ -102,11 +104,13 @@ let shorturl = async () => {
 	let cre = /^([a-zA-Z0-9 _-]+)$/
 	let protocol_ok = re.test(longurl)
 	if (!protocol_ok) {
+		erbox.style.display = 'flex'
 		erbox.innerHTML = 'invalid url'
 		status.innerHTML = 'shorten'
 		sucess.innerHTML = ''
 		output.style.display = 'none'
 	} else {
+		erbox.style.display = 'flex'
 		erbox.innerHTML = ''
 		if (custominput.value == '') {
 			genhash()
@@ -120,6 +124,7 @@ let shorturl = async () => {
 					genhash()
 					send_request(longurl)
 				} else {
+					erbox.style.display = 'flex'
 					erbox.innerHTML = 'alias already in use, choose another'
 					custominput.placeholder = custominput.value
 					custominput.value = ''
@@ -128,6 +133,7 @@ let shorturl = async () => {
 					output.style.display = 'none'
 				}
 			} else {
+				erbox.style.display = 'flex'
 				erbox.innerHTML = 'invalid custom alias, use only alphanumerics & underscore'
 				custominput.placeholder = custominput.value
 				custominput.value = ''
