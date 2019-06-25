@@ -82,7 +82,7 @@ let send_request = (url) => {
 	let address = `${endpoint}/${window.location.hash.substr(1)}`
 	// console.log(address)
 	pushJSON(address, myurl)
-	output.style.display = 'flex'
+	output.style.display = 'block'
 	shortenedURL.value = window.location.href
 	copyer('shortenedURL')
 	sucess.innerHTML = 'short url copied to clipboard'
