@@ -2,7 +2,8 @@
 	box-sizing: border-box;
 	outline: 0;
 	border: 0;
-	font-family: 'Product Sans', 'Roboto', 'Noto', sans-serif;
+	font-family: 'Poppins', 'Roboto', 'Noto', sans-serif;
+	font-weight: 700;
 }
 
 body {
@@ -49,7 +50,6 @@ input {
 	width: 100%;
 	font-size: inherit;
 	color: inherit;
-	font-weight: 700;
 }
 
 ::placeholder {
@@ -94,7 +94,6 @@ button {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-size: inherit;
-	font-weight: 700;
 	cursor: pointer;
 }
 
