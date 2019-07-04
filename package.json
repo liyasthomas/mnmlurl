@@ -1,43 +1,47 @@
 {
-	"name": "mnmlurl",
-	"version": "2.0.0",
-	"description": "Minimal URL is a modern URL shortener with support for custom alias",
-	"main": "index.js",
-	"scripts": {
-		"build": "gulp build",
-		"packit": "gulp packit"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/liyasthomas/mnmlurl.git"
-	},
-	"keywords": [
-		"url",
-		"url-shortener",
-		"free"
-	],
-	"author": "Liyas Thomas",
-	"license": "MIT",
-	"bugs": {
-		"url": "https://github.com/liyasthomas/mnmlurl/issues"
-	},
-	"homepage": "https://github.com/liyasthomas/mnmlurl#readme",
-	"dependencies": {
-		"@babel/core": "^7.4.5",
-		"@babel/preset-env": "^7.4.5",
-		"@babel/runtime": "^7.4.5",
-		"browserify": "^16.2.3",
-		"cssnano": "^4.1.10",
-		"del": "^5.0.0",
-		"gulp": "^4.0.2",
-		"gulp-babel": "^8.0.0",
-		"gulp-htmlmin": "^5.0.1",
-		"gulp-postcss": "^8.0.0",
-		"gulp-uglify": "^3.0.2",
-		"gulp-zip": "^5.0.0",
-		"vinyl-source-stream": "^2.0.0"
-	},
-	"devDependencies": {
-		"@babel/plugin-transform-runtime": "^7.4.4"
-	}
+  "name": "mnmlurl",
+  "version": "2.0.0",
+  "description": "Minimal URL is a modern URL shortener with support for custom alias",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp build",
+    "packit": "gulp packit",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/liyasthomas/mnmlurl.git"
+  },
+  "keywords": [
+    "url",
+    "url-shortener",
+    "free"
+  ],
+  "author": "Liyas Thomas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/liyasthomas/mnmlurl/issues"
+  },
+  "homepage": "https://github.com/liyasthomas/mnmlurl#readme",
+  "dependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "@babel/runtime": "^7.4.5",
+    "browserify": "^16.2.3",
+    "cssnano": "^4.1.10",
+    "del": "^5.0.0",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-zip": "^5.0.0",
+    "vinyl-source-stream": "^2.0.0",
+    "snyk": "^1.189.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-runtime": "^7.4.4"
+  },
+  "snyk": true
 }
