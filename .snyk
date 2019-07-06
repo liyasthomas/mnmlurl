@@ -1,0 +1,44 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.13.5
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  SNYK-JS-LODASH-450202:
+    - '@babel/core > lodash':
+        patched: '2019-07-04T02:28:39.292Z'
+    - '@babel/core > @babel/types > lodash':
+        patched: '2019-07-04T02:28:39.292Z'
+    - '@babel/core > @babel/helpers > @babel/types > lodash':
+        patched: '2019-07-04T02:28:39.292Z'
+    - '@babel/preset-env > @babel/plugin-transform-parameters > @babel/helper-get-function-arity > @babel/types > lodash':
+        patched: '2019-07-04T02:28:39.292Z'
+    - '@babel/core > @babel/helpers > @babel/traverse > @babel/generator > @babel/types > lodash':
+        patched: '2019-07-04T02:28:39.292Z'
+    - '@babel/preset-env > @babel/plugin-transform-async-to-generator > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/helper-function-name > @babel/types > lodash':
+        patched: '2019-07-04T02:28:39.292Z'
+    - '@babel/preset-env > @babel/plugin-transform-async-to-generator > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/helper-function-name > @babel/template > @babel/types > lodash':
+        patched: '2019-07-04T02:28:39.292Z'
+    - '@babel/preset-env > @babel/plugin-proposal-async-generator-functions > @babel/helper-remap-async-to-generator > @babel/helper-wrap-function > @babel/traverse > @babel/helper-function-name > @babel/helper-get-function-arity > @babel/types > lodash':
+        patched: '2019-07-04T02:28:39.292Z'
+    - snyk > snyk-nodejs-lockfile-parser > lodash:
+        patched: '2019-07-05T03:34:58.719Z'
+    - snyk > lodash:
+        patched: '2019-07-05T03:34:58.719Z'
+    - snyk > snyk-config > lodash:
+        patched: '2019-07-05T03:34:58.719Z'
+    - snyk > inquirer > lodash:
+        patched: '2019-07-05T03:34:58.719Z'
+    - snyk > @snyk/dep-graph > lodash:
+        patched: '2019-07-05T03:34:58.719Z'
+    - snyk > snyk-mvn-plugin > lodash:
+        patched: '2019-07-05T03:34:58.719Z'
+    - snyk > snyk-nuget-plugin > lodash:
+        patched: '2019-07-05T03:34:58.719Z'
+    - snyk > snyk-nodejs-lockfile-parser > graphlib > lodash:
+        patched: '2019-07-05T03:34:58.719Z'
+    - snyk > snyk-go-plugin > graphlib > lodash:
+        patched: '2019-07-05T03:34:58.719Z'
+    - snyk > @snyk/dep-graph > graphlib > lodash:
+        patched: '2019-07-05T03:34:58.719Z'
+    - snyk > snyk-php-plugin > @snyk/composer-lockfile-parser > lodash:
+        patched: '2019-07-05T03:34:58.719Z'
