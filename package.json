@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/liyasthomas/mnmlurl#readme",
   "dependencies": {
-    "@babel/core": "^7.4.5",
+    "@babel/core": "^7.5.4",
     "@babel/preset-env": "^7.5.4",
     "@babel/runtime": "^7.5.4",
     "browserify": "^16.3.0",
