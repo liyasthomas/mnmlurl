@@ -38,7 +38,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.0.0",
     "vinyl-source-stream": "^2.0.0",
-    "snyk": "^1.192.4"
+    "snyk": "^1.192.6"
   },
   "devDependencies": {
     "@babel/plugin-transform-runtime": "^7.4.4"
