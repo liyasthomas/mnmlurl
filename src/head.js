@@ -1,6 +1,6 @@
 const endpoint = 'https://www.jsonstore.io/6b6e3cd07f3aaecd8df25ab95875eb2462f00a7614f7205c2d5dc5229896ea98'
 const fetchJSON = (a) => {
-	let f = new XMLHttpRequest()
+	const f = new XMLHttpRequest()
 	f.open('GET', a, false)
 	f.send(null)
 	return f.responseText
@@ -13,10 +13,10 @@ const isURL = (a) => {
 		return false
 	}
 }
-let hashh = window.location.hash.substr(1)
+const hashh = window.location.hash.substr(1)
 if (window.location.hash != '') {
-	let res = JSON.parse(fetchJSON(`${endpoint}/${hashh}`))
-	let data = res.result
+	const res = JSON.parse(fetchJSON(`${endpoint}/${hashh}`))
+	const data = res.result
 	if (data != null) {
 		if (isURL(data)) {
 			window.location.href = data
