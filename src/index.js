@@ -100,13 +100,13 @@ const shorturl = async () => {
 	const cre = /^([a-zA-Z0-9 _-]+)$/
 	const protocol_ok = re.test(longurl)
 	if (!protocol_ok) {
-		erbox.style.display = 'flex'
+		erbox.style.display = 'block'
 		erbox.innerHTML = 'invalid url'
 		status.innerHTML = 'shorten'
 		sucess.innerHTML = ''
 		output.style.display = 'none'
 	} else {
-		erbox.style.display = 'flex'
+		erbox.style.display = 'block'
 		erbox.innerHTML = ''
 		if (custominput.value == '') {
 			genhash()
@@ -120,7 +120,7 @@ const shorturl = async () => {
 					genhash()
 					send_request(longurl)
 				} else {
-					erbox.style.display = 'flex'
+					erbox.style.display = 'block'
 					erbox.innerHTML = 'alias already in use, choose another'
 					custominput.placeholder = custominput.value
 					custominput.value = ''
@@ -129,7 +129,7 @@ const shorturl = async () => {
 					output.style.display = 'none'
 				}
 			} else {
-				erbox.style.display = 'flex'
+				erbox.style.display = 'block'
 				erbox.innerHTML = 'invalid custom alias, use only alphanumerics & underscore'
 				custominput.placeholder = custominput.value
 				custominput.value = ''

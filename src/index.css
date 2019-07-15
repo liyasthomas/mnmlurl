@@ -96,8 +96,8 @@ button {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-size: inherit;
-	align-items: center;
 	cursor: pointer;
+	text-align: left;
 }
 
 @media all and (max-width: 720px) {
