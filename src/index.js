@@ -6,37 +6,37 @@ const alias = document.getElementById('alias')
 const sucess = document.getElementById('sucess')
 const shortenedURL = document.getElementById('shortenedURL')
 const sbtn = document.getElementById('sbtn')
-let pushJSON = (url, data) => {
-	let request = new XMLHttpRequest()
+const pushJSON = (url, data) => {
+	const request = new XMLHttpRequest()
 	request.open('POST', url)
 	request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
 	request.send(JSON.stringify(data))
 }
-let cinp = () => {
+const cinp = () => {
 	erbox.innerHTML = ''
 	erbox.style.display = 'none'
-	let cival = custominput.value
-	let res = JSON.parse(fetchJSON(`${endpoint}/${cival}`))
-	let data = res.result
+	const cival = custominput.value
+	const res = JSON.parse(fetchJSON(`${endpoint}/${cival}`))
+	const data = res.result
 	if (data != null) {
 		return false
 	} else if (data == null) {
 		return true
 	}
 }
-let geturl = () => {
-	let url = document.getElementById('urlinput').value
+const geturl = () => {
+	const url = document.getElementById('urlinput').value
 	return url
 }
-let getrandom = () => {
+const getrandom = () => {
 	let text = ''
-	let possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
+	const possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
 	for (let i = 0; i < 5; i++) {
 		text += possible.charAt(Math.floor(Math.random() * possible.length))
 	}
 	return text
 }
-let genhash = () => {
+const genhash = () => {
 	if (custominput.value == '') {
 		window.location.hash = getrandom()
 		check_is_unique()
@@ -44,22 +44,22 @@ let genhash = () => {
 		window.location.hash = custominput.value
 	}
 }
-let check_is_unique = () => {
-	let url = window.location.hash.substr(1)
-	let res = JSON.parse(fetchJSON(`${endpoint}/${url}`))
-	let data = res.result
+const check_is_unique = () => {
+	const url = window.location.hash.substr(1)
+	const res = JSON.parse(fetchJSON(`${endpoint}/${url}`))
+	const data = res.result
 	if (data != null) {
 		genhash()
 	}
 }
-let copyer = (containerid) => {
-	let elt = document.getElementById(containerid)
+const copyer = (containerid) => {
+	const elt = document.getElementById(containerid)
 	if (document.selection) { // IE
 		if (elt.nodeName.toLowerCase() === 'input') {
 			elt.select()
 			document.execCommand('copy')
 		} else {
-			let range = document.body.createTextRange()
+			const range = document.body.createTextRange()
 			range.moveToElementText(elt)
 			range.select()
 			document.execCommand('copy')
@@ -69,7 +69,7 @@ let copyer = (containerid) => {
 			elt.select()
 			document.execCommand('copy')
 		} else {
-			let range_ = document.createRange()
+			const range_ = document.createRange()
 			range_.selectNode(elt)
 			window.getSelection().removeAllRanges()
 			window.getSelection().addRange(range_)
@@ -77,10 +77,9 @@ let copyer = (containerid) => {
 		}
 	}
 }
-let send_request = (url) => {
-	let myurl = url
-	let address = `${endpoint}/${window.location.hash.substr(1)}`
-	// console.log(address)
+const send_request = (url) => {
+	const myurl = url
+	const address = `${endpoint}/${window.location.hash.substr(1)}`
 	pushJSON(address, myurl)
 	output.style.display = 'block'
 	shortenedURL.value = window.location.href
@@ -88,21 +87,18 @@ let send_request = (url) => {
 	sucess.innerHTML = 'short url copied to clipboard'
 	status.innerHTML = 'shorten'
 }
-
-function sleep(ms) {
-	return new Promise(resolve => setTimeout(resolve, ms))
-}
-let shorturl = async () => {
+const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
+const shorturl = async () => {
 	erbox.innerHTML = ''
 	erbox.style.display = 'none'
 	sucess.innerHTML = ''
 	status.innerHTML = 'shortening...'
 	output.style.display = 'none'
-	await sleep(1000)
-	let longurl = geturl()
-	let re = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/
-	let cre = /^([a-zA-Z0-9 _-]+)$/
-	let protocol_ok = re.test(longurl)
+	await sleep(500)
+	const longurl = geturl()
+	const re = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/
+	const cre = /^([a-zA-Z0-9 _-]+)$/
+	const protocol_ok = re.test(longurl)
 	if (!protocol_ok) {
 		erbox.style.display = 'flex'
 		erbox.innerHTML = 'invalid url'
