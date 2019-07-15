@@ -2,7 +2,7 @@ const endpoint = 'https://www.jsonstore.io/6b6e3cd07f3aaecd8df25ab95875eb2462f00
 const fetchJSON = (a) => {
 	const f = new XMLHttpRequest()
 	f.open('GET', a, false)
-	f.send(null)
+	f.send()
 	return f.responseText
 }
 const isURL = (a) => {

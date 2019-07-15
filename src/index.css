@@ -21,6 +21,8 @@ a {
 	color: inherit;
 	display: inline-flex;
 	align-items: center;
+	padding: 16px 0;
+	border-bottom: 2px solid;
 }
 
 .main {
@@ -31,8 +33,7 @@ a {
 
 footer {
 	display: flex;
-	align-items: center;
-	padding: 16px 32px;
+	padding: 16px;
 	font-size: 18px;
 }
 
@@ -94,11 +95,16 @@ button {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 	font-size: inherit;
+	align-items: center;
 	cursor: pointer;
 }
 
 @media all and (max-width: 720px) {
 	body {
 		font-size: 32px;
+	}
+
+	footer {
+		flex-direction: column;
 	}
 }
