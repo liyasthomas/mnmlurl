@@ -69,7 +69,7 @@
 	<main class="main">
 		<form class="form" action="javascript:void(0);">
 			<input type="url" id="urlinput" placeholder="paste a long url" label="paste a long url" required>
-			<input type="text" maxlength="20" id="custominput" placeholder="custom alias (optional)" label="custom alias (optional)">
+			<input type="text" maxlength="20" id="custominput" placeholder="custom alias" label="custom alias">
 			<button id="sbtn" type="submit" aria-label="Shorten">
 				<span id="status">shorten</span>
 			</button>
@@ -82,10 +82,17 @@
 		</div>
 		<div class="flex"></div>
 		<footer>
-			<a href="https://github.com/liyasthomas/mnmlurl-extension" target="_blank" rel="noopener" style="margin: 0 16px;">Get browser extension</a>
-			<a href="https://github.com/liyasthomas/mnmlurl" target="_blank" rel="noopener" style="margin: 0 16px;"><img src="icons/github.svg" alt="" style="margin-right: 8px;">GitHub</a>
-			<button id="installPWA" onclick="installPWA()">
-				Install <img src="icons/pwalogo.svg" alt="PWA" style="height: 16px; margin-left: 8px;">
+			<a href="https://mnmlurl.ml">
+				<img src="icons/logo.svg" alt="logo" style="height: 24px;">
+			</a>
+			<a href="https://github.com/liyasthomas/mnmlurl-extension" target="_blank" rel="noopener">
+				Get browser extension
+			</a>
+			<a href="https://github.com/liyasthomas/mnmlurl" target="_blank" rel="noopener">
+				<img src="icons/github.svg" alt="GitHub" style="margin-right: 8px;">GitHub
+			</a>
+			<button id="installPWA" onclick="installPWA()" style="padding: 16px;">
+				<img src="icons/pwalogo.svg" alt="PWA" style="height: 16px;">
 			</button>
 			<!--<p id="count"></p>-->
 		</footer>

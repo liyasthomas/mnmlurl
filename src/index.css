@@ -14,6 +14,17 @@ body {
 	user-select: none;
 	font-size: 64px;
 	color: #333;
+	animation: fadein .2s;
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+
+	to {
+		opacity: 1;
+	}
 }
 
 a {
@@ -21,8 +32,8 @@ a {
 	color: inherit;
 	display: inline-flex;
 	align-items: center;
+	margin: 0 16px;
 	padding: 16px 0;
-	border-bottom: 2px solid;
 }
 
 .main {
@@ -67,16 +78,6 @@ input {
 	color: #f44336;
 	animation: fadeout;
 	animation-fill-mode: forwards;
-}
-
-@keyframes fadeIn {
-	from {
-		opacity: 0;
-	}
-
-	to {
-		opacity: 1;
-	}
 }
 
 #alias {
