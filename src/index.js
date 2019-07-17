@@ -6,6 +6,7 @@ const alias = document.getElementById('alias')
 const sucess = document.getElementById('sucess')
 const shortenedURL = document.getElementById('shortenedURL')
 const sbtn = document.getElementById('sbtn')
+const dbtn = document.getElementById('dbtn')
 const pushJSON = (url, data) => {
 	const request = new XMLHttpRequest()
 	request.open('POST', url)
@@ -15,9 +16,9 @@ const pushJSON = (url, data) => {
 const cinp = () => {
 	erbox.innerHTML = ''
 	erbox.style.display = 'none'
-	const cival = custominput.value
-	const res = JSON.parse(fetchJSON(`${endpoint}/${cival}`))
-	const data = res.result
+	let cival = custominput.value
+	let res = JSON.parse(fetchJSON(`${endpoint}/${cival}`))
+	let data = res.result
 	if (data != null) {
 		return false
 	} else if (data == null) {
@@ -25,7 +26,7 @@ const cinp = () => {
 	}
 }
 const geturl = () => {
-	const url = document.getElementById('urlinput').value
+	let url = document.getElementById('urlinput').value
 	return url
 }
 const getrandom = () => {
@@ -45,21 +46,21 @@ const genhash = () => {
 	}
 }
 const check_is_unique = () => {
-	const url = window.location.hash.substr(1)
-	const res = JSON.parse(fetchJSON(`${endpoint}/${url}`))
-	const data = res.result
+	let url = window.location.hash.substr(1)
+	let res = JSON.parse(fetchJSON(`${endpoint}/${url}`))
+	let data = res.result
 	if (data != null) {
 		genhash()
 	}
 }
 const copyer = (containerid) => {
-	const elt = document.getElementById(containerid)
+	let elt = document.getElementById(containerid)
 	if (document.selection) { // IE
 		if (elt.nodeName.toLowerCase() === 'input') {
 			elt.select()
 			document.execCommand('copy')
 		} else {
-			const range = document.body.createTextRange()
+			let range = document.body.createTextRange()
 			range.moveToElementText(elt)
 			range.select()
 			document.execCommand('copy')
@@ -69,7 +70,7 @@ const copyer = (containerid) => {
 			elt.select()
 			document.execCommand('copy')
 		} else {
-			const range_ = document.createRange()
+			let range_ = document.createRange()
 			range_.selectNode(elt)
 			window.getSelection().removeAllRanges()
 			window.getSelection().addRange(range_)
@@ -78,8 +79,8 @@ const copyer = (containerid) => {
 	}
 }
 const send_request = (url) => {
-	const myurl = url
-	const address = `${endpoint}/${window.location.hash.substr(1)}`
+	let myurl = url
+	let address = `${endpoint}/${window.location.hash.substr(1)}`
 	pushJSON(address, myurl)
 	output.style.display = 'block'
 	shortenedURL.value = window.location.href
@@ -95,10 +96,10 @@ const shorturl = async () => {
 	status.innerHTML = 'shortening...'
 	output.style.display = 'none'
 	await sleep(500)
-	const longurl = geturl()
+	let longurl = geturl()
 	const re = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/
 	const cre = /^([a-zA-Z0-9 _-]+)$/
-	const protocol_ok = re.test(longurl)
+	let protocol_ok = re.test(longurl)
 	if (!protocol_ok) {
 		erbox.style.display = 'block'
 		erbox.innerHTML = 'invalid url'
@@ -140,9 +141,29 @@ const shorturl = async () => {
 		}
 	}
 }
-sbtn.addEventListener('click', shorturl)
-// fetch(endpoint + "/key", {
-//	method: 'DELETE',
-// });
+
+const getkey = () => {
+	let key = document.getElementById('key').value
+	return key
+}
+const delKey = (key) => {
+	fetch(endpoint + "/" + key, {
+		method: 'DELETE',
+	});
+	status.innerHTML = 'delete'
+	output.style.display = 'block'
+	alias.innerHTML = 'deleted'
+}
+const deleteurl = async () => {
+	erbox.innerHTML = ''
+	erbox.style.display = 'none'
+	sucess.innerHTML = ''
+	status.innerHTML = 'deleting...'
+	output.style.display = 'none'
+	await sleep(500)
+	let key = getkey()
+	console.log(key)
+	delKey(key)
+}
 // let r = JSON.parse(fetchJSON(endpoint)).result;
 // document.getElementById("count").innerHTML = Object.keys(r).length + " urls minimalized";

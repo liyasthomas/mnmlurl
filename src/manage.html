@@ -51,27 +51,14 @@
 	<!-- Web Fonts -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins:700&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="index.css">
-	<script>
-		if ('serviceWorker' in navigator) {
-			window.addEventListener('load', function() {
-				navigator.serviceWorker.register('sw.js').then(function(registration) {
-					console.log('ServiceWorker registration successful with scope: ', registration.scope);
-				}).catch(function(err) {
-					console.log('ServiceWorker registration failed: ', err);
-				});
-			});
-		}
-
-	</script>
 </head>
 
 <body>
 	<main class="main">
 		<form class="form" action="javascript:void(0);">
-			<input type="url" id="urlinput" placeholder="paste a long url" label="paste a long url" required>
-			<input type="text" maxlength="20" id="custominput" placeholder="custom alias" label="custom alias">
-			<button id="sbtn" type="submit" aria-label="Shorten" onclick="shorturl()">
-				<span id="status">shorten</span>
+			<input type="text" maxlength="20" id="key" placeholder="alias" label="alias" required>
+			<button id="dbtn" type="submit" aria-label="Shorten" onclick="deleteurl()">
+				<span id="status">delete</span>
 			</button>
 		</form>
 		<div id="erbox"></div>
