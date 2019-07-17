@@ -26,7 +26,7 @@
   "homepage": "https://github.com/liyasthomas/mnmlurl#readme",
   "dependencies": {
     "@babel/preset-env": "^7.5.5",
-    "@babel/runtime": "^7.5.4",
+    "@babel/runtime": "^7.5.5",
     "browserify": "^16.3.0",
     "cssnano": "^4.1.10",
     "del": "^5.0.0",
