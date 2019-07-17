@@ -81,10 +81,9 @@
 			<button id="installPWA" onclick="installPWA()" style="padding: 16px;">
 				<img src="icons/pwalogo.svg" alt="PWA" style="height: 16px;">
 			</button>
-			<!--<p id="count"></p>-->
 		</footer>
 	</main>
-	<script src="index.js"></script>
+	<script src="manage.js"></script>
 	<script>
 		let pwaInstalled = localStorage.getItem('pwaInstalled') == 'yes'
 		if (window.matchMedia('(display-mode: standalone)').matches) {

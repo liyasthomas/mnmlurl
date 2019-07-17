@@ -13,29 +13,29 @@ const compress = () => gulp
 	.pipe(zip('package.zip'))
 	.pipe(gulp.dest('output'))
 const pre_js = () => gulp
-	.src(['src/index.js', 'src/head.js'])
+	.src(['src/index.js', 'src/manage.js', 'src/head.js'])
 	.pipe(babel({
 		plugins: ['@babel/transform-runtime'],
-		presets: ['@babel/env']
+		presets: ['@babel/preset-env']
 	}))
 	.pipe(gulp.dest('comp'))
 const m_html = () => gulp
-	.src(['src/index.html', 'src/404.html'])
+	.src(['src/index.html', 'src/manage.html', 'src/404.html'])
 	.pipe(htmlmin({
 		collapseWhitespace: true
 	}))
 	.pipe(gulp.dest('output'))
 const m_css = () => {
 	const plugins = [
-cssnano()
-]
+    cssnano()
+  ]
 	return gulp
 		.src('src/index.css')
 		.pipe(postcss(plugins))
 		.pipe(gulp.dest('output'))
 }
 const m_js = () => gulp
-	.src(['comp/index.js', 'comp/head.js'])
+	.src(['comp/index.js', 'comp/manage.js', 'comp/head.js'])
 	.pipe(uglify({
 		compress: {
 			unused: false
@@ -48,9 +48,13 @@ const copy_extras = () => gulp
 	})
 	.pipe(gulp.dest('output'))
 const clean = () => del(['./comp'])
-const bundle = () => browserify('output/index.js')
+const bundleindex = () => browserify(['output/index.js'])
 	.bundle()
 	.pipe(source('index.js'))
+	.pipe(gulp.dest('output'))
+const bundlemanage = () => browserify(['output/manage.js'])
+	.bundle()
+	.pipe(source('manage.js'))
 	.pipe(gulp.dest('output'))
 gulp.task('html', m_html)
 gulp.task('css', m_css)
@@ -59,10 +63,11 @@ gulp.task('pre_js', pre_js)
 gulp.task('clean', clean)
 gulp.task('copy_extras', copy_extras)
 gulp.task('compress', compress)
-gulp.task('bundle', bundle)
+gulp.task('bundleindex', bundleindex)
+gulp.task('bundlemanage', bundlemanage)
 gulp.task(
 	'build',
-	gulp.series('html', 'css', 'pre_js', 'js', 'bundle', 'copy_extras', 'clean')
+	gulp.series('html', 'css', 'pre_js', 'js', 'bundleindex', 'bundlemanage', 'copy_extras', 'clean')
 )
 gulp.task(
 	'packit',

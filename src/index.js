@@ -6,7 +6,6 @@ const alias = document.getElementById('alias')
 const sucess = document.getElementById('sucess')
 const shortenedURL = document.getElementById('shortenedURL')
 const sbtn = document.getElementById('sbtn')
-const dbtn = document.getElementById('dbtn')
 const pushJSON = (url, data) => {
 	const request = new XMLHttpRequest()
 	request.open('POST', url)
@@ -82,6 +81,10 @@ const send_request = (url) => {
 	const myurl = url
 	const address = `${endpoint}/${window.location.hash.substr(1)}`
 	pushJSON(address, myurl)
+	custominput.placeholder = 'custom alias'
+	custominput.value = ''
+	document.getElementById('urlinput').placeholder = 'paste a long url'
+	document.getElementById('urlinput').value = ''
 	output.style.display = 'block'
 	shortenedURL.value = window.location.href
 	copyer('shortenedURL')
@@ -98,7 +101,7 @@ const shorturl = async () => {
 	await sleep(500)
 	const longurl = geturl()
 	const re = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/
-	const cre = /^([a-zA-Z0-9 _-]+)$/
+	const cre = /^([a-zA-Z0-9_-]+)$/
 	const protocol_ok = re.test(longurl)
 	if (!protocol_ok) {
 		erbox.style.display = 'block'
@@ -107,8 +110,6 @@ const shorturl = async () => {
 		sucess.innerHTML = ''
 		output.style.display = 'none'
 	} else {
-		erbox.style.display = 'block'
-		erbox.innerHTML = ''
 		if (custominput.value == '') {
 			genhash()
 			send_request(longurl)
@@ -123,7 +124,7 @@ const shorturl = async () => {
 				} else {
 					erbox.style.display = 'block'
 					erbox.innerHTML = 'alias already in use, choose another'
-					custominput.placeholder = custominput.value
+					custominput.placeholder = 'custom alias'
 					custominput.value = ''
 					status.innerHTML = 'shorten'
 					sucess.innerHTML = ''
@@ -142,29 +143,5 @@ const shorturl = async () => {
 	}
 }
 sbtn.addEventListener('click', shorturl)
-const getkey = () => {
-	const key = document.getElementById('key').value
-	return key
-}
-const delKey = (key) => {
-	fetch(`${endpoint}/${key}`, {
-		method: 'DELETE'
-	})
-	status.innerHTML = 'delete'
-	output.style.display = 'block'
-	alias.innerHTML = 'deleted'
-}
-const deleteurl = async () => {
-	erbox.innerHTML = ''
-	erbox.style.display = 'none'
-	sucess.innerHTML = ''
-	status.innerHTML = 'deleting...'
-	output.style.display = 'none'
-	await sleep(500)
-	const key = getkey()
-	console.log(key)
-	delKey(key)
-}
-dbtn.addEventListener('click', deleteurl)
 // let r = JSON.parse(fetchJSON(endpoint)).result;
 // document.getElementById("count").innerHTML = Object.keys(r).length + " urls minimalized";
