@@ -45,7 +45,7 @@ const deleteurl = async () => {
 	sucess.innerHTML = ''
 	status.innerHTML = 'deleting...'
 	output.style.display = 'none'
-	await sleep(500)
+	await sleep(250)
 	const key = getkey()
 	const cre = /^([a-zA-Z0-9_-]+)$/
 	if (keyinput.value == '') {

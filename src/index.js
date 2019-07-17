@@ -81,7 +81,7 @@ const send_request = (url) => {
 	const myurl = url
 	const address = `${endpoint}/${window.location.hash.substr(1)}`
 	pushJSON(address, myurl)
-	custominput.placeholder = 'custom alias'
+	custominput.placeholder = 'optional custom alias'
 	custominput.value = ''
 	document.getElementById('urlinput').placeholder = 'paste a long url'
 	document.getElementById('urlinput').value = ''
@@ -98,7 +98,7 @@ const shorturl = async () => {
 	sucess.innerHTML = ''
 	status.innerHTML = 'shortening...'
 	output.style.display = 'none'
-	await sleep(500)
+	await sleep(250)
 	const longurl = geturl()
 	const re = /((([A-Za-z]{3,9}:(?:\/\/)?)(?:[\-;:&=\+\$,\w]+@)?[A-Za-z0-9\.\-]+|(?:www\.|[\-;:&=\+\$,\w]+@)[A-Za-z0-9\.\-]+)((?:\/[\+~%\/\.\w\-_]*)?\??(?:[\-\+=&;%@\.\w_]*)#?(?:[\.\!\/\\\w]*))?)/
 	const cre = /^([a-zA-Z0-9_-]+)$/
@@ -124,7 +124,7 @@ const shorturl = async () => {
 				} else {
 					erbox.style.display = 'block'
 					erbox.innerHTML = 'alias already in use, choose another'
-					custominput.placeholder = 'custom alias'
+					custominput.placeholder = 'optional custom alias'
 					custominput.value = ''
 					status.innerHTML = 'shorten'
 					sucess.innerHTML = ''
@@ -132,8 +132,8 @@ const shorturl = async () => {
 				}
 			} else {
 				erbox.style.display = 'block'
-				erbox.innerHTML = 'invalid custom alias, use only alphanumerics & underscore'
-				custominput.placeholder = 'custom alias'
+				erbox.innerHTML = 'invalid optional custom alias, use only alphanumerics & underscore'
+				custominput.placeholder = 'optional custom alias'
 				custominput.value = ''
 				status.innerHTML = 'shorten'
 				sucess.innerHTML = ''
