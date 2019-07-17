@@ -133,7 +133,7 @@ const shorturl = async () => {
 			} else {
 				erbox.style.display = 'block'
 				erbox.innerHTML = 'invalid custom alias, use only alphanumerics & underscore'
-				custominput.placeholder = custominput.value
+				custominput.placeholder = 'custom alias'
 				custominput.value = ''
 				status.innerHTML = 'shorten'
 				sucess.innerHTML = ''
