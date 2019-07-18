@@ -1,11 +1,12 @@
-const erbox = document.getElementById('erbox')
+const urlinput = document.getElementById('urlinput')
 const custominput = document.getElementById('custominput')
-const output = document.getElementById('output')
-const status = document.getElementById('status')
-const alias = document.getElementById('alias')
-const sucess = document.getElementById('sucess')
-const shortenedURL = document.getElementById('shortenedURL')
 const sbtn = document.getElementById('sbtn')
+const status = document.getElementById('status')
+const erbox = document.getElementById('erbox')
+const output = document.getElementById('output')
+const alias = document.getElementById('alias')
+const shortenedURL = document.getElementById('shortenedURL')
+const sucess = document.getElementById('sucess')
 const qr = document.getElementById('qr')
 const pushJSON = (url, data) => {
 	const request = new XMLHttpRequest()
@@ -14,7 +15,6 @@ const pushJSON = (url, data) => {
 	request.send(JSON.stringify(data))
 }
 const cinp = () => {
-	erbox.innerHTML = ''
 	erbox.style.display = 'none'
 	const cival = custominput.value
 	const res = JSON.parse(fetchJSON(`${endpoint}/${cival}`))
@@ -26,7 +26,7 @@ const cinp = () => {
 	}
 }
 const geturl = () => {
-	const url = document.getElementById('urlinput').value
+	const url = urlinput.value
 	return url
 }
 const getrandom = () => {
@@ -83,23 +83,21 @@ const send_request = (url) => {
 	const myurl = url
 	const address = `${endpoint}/${window.location.hash.substr(1)}`
 	pushJSON(address, myurl)
+	urlinput.placeholder = 'paste a long url'
+	urlinput.value = ''
 	custominput.placeholder = 'optional custom alias'
 	custominput.value = ''
-	document.getElementById('urlinput').placeholder = 'paste a long url'
-	document.getElementById('urlinput').value = ''
+	status.innerHTML = 'shorten'
 	output.style.display = 'block'
 	shortenedURL.value = window.location.href
 	copyer('shortenedURL')
 	sucess.innerHTML = 'short url copied to clipboard'
-	status.innerHTML = 'shorten'
 	qr.innerHTML = createFrame(`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${shortenedURL.value}`)
 }
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 const shorturl = async () => {
-	erbox.innerHTML = ''
-	erbox.style.display = 'none'
-	sucess.innerHTML = ''
 	status.innerHTML = 'shortening...'
+	erbox.style.display = 'none'
 	output.style.display = 'none'
 	await sleep(250)
 	const longurl = geturl()
@@ -107,10 +105,9 @@ const shorturl = async () => {
 	const cre = /^([a-zA-Z0-9_-]+)$/
 	const protocol_ok = re.test(longurl)
 	if (!protocol_ok) {
+		status.innerHTML = 'shorten'
 		erbox.style.display = 'block'
 		erbox.innerHTML = 'invalid url'
-		status.innerHTML = 'shorten'
-		sucess.innerHTML = ''
 		output.style.display = 'none'
 	} else {
 		if (custominput.value == '') {
@@ -120,26 +117,23 @@ const shorturl = async () => {
 		} else {
 			if (cre.test(custominput.value)) {
 				if (cinp()) {
-					alias.innerHTML = 'alias available'
-					status.innerHTML = 'shorten'
 					genhash()
 					send_request(longurl)
+					alias.innerHTML = 'alias available'
 				} else {
-					erbox.style.display = 'block'
-					erbox.innerHTML = 'alias already in use, choose another'
+					status.innerHTML = 'shorten'
 					custominput.placeholder = 'optional custom alias'
 					custominput.value = ''
-					status.innerHTML = 'shorten'
-					sucess.innerHTML = ''
+					erbox.style.display = 'block'
+					erbox.innerHTML = 'alias already in use, choose another'
 					output.style.display = 'none'
 				}
 			} else {
-				erbox.style.display = 'block'
-				erbox.innerHTML = 'invalid optional custom alias, use only alphanumerics & underscore'
+				status.innerHTML = 'shorten'
 				custominput.placeholder = 'optional custom alias'
 				custominput.value = ''
-				status.innerHTML = 'shorten'
-				sucess.innerHTML = ''
+				erbox.style.display = 'block'
+				erbox.innerHTML = 'invalid optional custom alias, use only alphanumerics & underscore'
 				output.style.display = 'none'
 			}
 		}
