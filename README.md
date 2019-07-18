@@ -34,7 +34,7 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 :fire: **Custom and random alias support**: Add your own custom alias or generate a random one.
 
-:1234: **Qenerate QR code**: Create and download shortened URL's QR code.
+:1234: **Generate QR code**: Create and download shortened URL's QR code.
 
 :alembic: **Manage URLs**: Delete already created alias to update/create new URLs.
 
@@ -50,7 +50,9 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 ## Demo
 
-[mnmlurl.ml](https://mnmlurl.ml)
+[mnmlurl.ml](https://mnmlurl.ml) _(production)_
+
+[liyasthomas.github.io/mnmlurl](https://liyasthomas.github.io/mnmlurl) _(development)_
 
 ---
 
