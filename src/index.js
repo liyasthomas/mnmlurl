@@ -15,7 +15,6 @@ const pushJSON = (url, data) => {
 	request.send(JSON.stringify(data))
 }
 const cinp = () => {
-	erbox.style.display = 'none'
 	const cival = custominput.value
 	const res = JSON.parse(fetchJSON(`${endpoint}/${cival}`))
 	const data = res.result
@@ -83,9 +82,7 @@ const send_request = (url) => {
 	const myurl = url
 	const address = `${endpoint}/${window.location.hash.substr(1)}`
 	pushJSON(address, myurl)
-	urlinput.placeholder = 'paste a long url'
 	urlinput.value = ''
-	custominput.placeholder = 'optional custom alias'
 	custominput.value = ''
 	status.innerHTML = 'shorten'
 	output.style.display = 'block'
@@ -108,7 +105,6 @@ const shorturl = async () => {
 		status.innerHTML = 'shorten'
 		erbox.style.display = 'block'
 		erbox.innerHTML = 'invalid url'
-		output.style.display = 'none'
 	} else {
 		if (custominput.value == '') {
 			genhash()
@@ -121,24 +117,18 @@ const shorturl = async () => {
 					send_request(longurl)
 					alias.innerHTML = 'alias available'
 				} else {
-					status.innerHTML = 'shorten'
-					custominput.placeholder = 'optional custom alias'
 					custominput.value = ''
+					status.innerHTML = 'shorten'
 					erbox.style.display = 'block'
 					erbox.innerHTML = 'alias already in use, choose another'
-					output.style.display = 'none'
 				}
 			} else {
-				status.innerHTML = 'shorten'
-				custominput.placeholder = 'optional custom alias'
 				custominput.value = ''
+				status.innerHTML = 'shorten'
 				erbox.style.display = 'block'
 				erbox.innerHTML = 'invalid optional custom alias, use only alphanumerics & underscore'
-				output.style.display = 'none'
 			}
 		}
 	}
 }
 sbtn.addEventListener('click', shorturl)
-// let r = JSON.parse(fetchJSON(endpoint)).result;
-// document.getElementById("count").innerHTML = Object.keys(r).length + " urls minimalized";

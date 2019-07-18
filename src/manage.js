@@ -14,13 +14,12 @@ const delKey = (key, data) => {
 	fetch(`${endpoint}/${key}`, {
 		method: 'DELETE'
 	})
-	keyinput.placeholder = 'alias'
 	keyinput.value = ''
-	alias.innerHTML = 'alias found'
 	status.innerHTML = 'delete'
+	output.style.display = 'block'
+	alias.innerHTML = 'alias found'
 	shortenedURL.value = data
 	sucess.innerHTML = 'url deleted'
-	output.style.display = 'block'
 }
 const check_is_unique_alias = () => {
 	const key = keyinput.value
@@ -29,42 +28,32 @@ const check_is_unique_alias = () => {
 	if (data != null) {
 		delKey(key, data)
 	} else {
-		erbox.style.display = 'block'
-		erbox.innerHTML = 'alias not found'
-		keyinput.placeholder = 'alias'
 		keyinput.value = ''
 		status.innerHTML = 'delete'
-		sucess.innerHTML = ''
-		output.style.display = 'none'
+		erbox.style.display = 'block'
+		erbox.innerHTML = 'alias not found'
 	}
 }
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 const deleteurl = async () => {
-	erbox.innerHTML = ''
-	erbox.style.display = 'none'
-	sucess.innerHTML = ''
 	status.innerHTML = 'deleting...'
+	erbox.style.display = 'none'
 	output.style.display = 'none'
 	await sleep(250)
 	const key = getkey()
 	const cre = /^([a-zA-Z0-9_-]+)$/
 	if (keyinput.value == '') {
+		status.innerHTML = 'delete'
 		erbox.style.display = 'block'
 		erbox.innerHTML = 'invalid alias'
-		status.innerHTML = 'delete'
-		sucess.innerHTML = ''
-		output.style.display = 'none'
 	} else {
 		if (cre.test(keyinput.value)) {
 			check_is_unique_alias()
 		} else {
-			erbox.style.display = 'block'
-			erbox.innerHTML = 'invalid custom alias, use only alphanumerics & underscore'
-			keyinput.placeholder = 'alias'
 			keyinput.value = ''
 			status.innerHTML = 'delete'
-			sucess.innerHTML = ''
-			output.style.display = 'none'
+			erbox.style.display = 'block'
+			erbox.innerHTML = 'invalid custom alias, use only alphanumerics & underscore'
 		}
 	}
 }
