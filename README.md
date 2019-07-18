@@ -44,7 +44,7 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 **Minimal URL can be hosted on any website hosting services like GitHub/GitLab pages, Firebase/Heroku hosting, yoursite.com, etc. For hosting in such custom domains, Its advised to `npm run-scripts build` and upload `output` folder. Hosting on GitHub pages was just for proof of concept.**
 
-**IMPORTANT: Minimal URL is an experimental project. Don't shorten sensitive contents/URLs with it. jsonstore.io endpoints are always public making shortened URLs visible for everyone.**
+<span style="color:red;">**IMPORTANT: Minimal URL is an experimental project. Don't shorten sensitive contents/URLs with it. jsonstore.io endpoints are always public making shortened URLs visible for everyone.**</span>
 
 ---
 
@@ -52,7 +52,7 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 [mnmlurl.ml](https://mnmlurl.ml) _(production)_
 
-[liyasthomas.github.io/mnmlurl](https://liyasthomas.github.io/mnmlurl) _(development)_
+[liyasthomas.github.io/mnmlurl/src](https://liyasthomas.github.io/mnmlurl/src) _(development)_
 
 ---
 
@@ -91,7 +91,7 @@ This project is developed by [Liyas Thomas](https://github.com/liyasthomas) usin
 * [Liyas Thomas](https://github.com/liyasthomas)
 
 ### Contributors
-* [Liyas Thomas](https://github.com/liyasthomas)
+* [Contributors](https://github.com/liyasthomas/mnmlurl/graphs/contributors)
 
 See also the list of [contributors](https://github.com/liyasthomas/mnmlurl/graphs/contributors) who participated in this project.
 
