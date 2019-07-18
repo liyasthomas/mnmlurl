@@ -90,6 +90,10 @@ input {
 	color: #58DE71;
 }
 
+#qr {
+	padding: 16px;
+}
+
 button {
 	padding: 16px 32px;
 	background: linear-gradient(120deg, #12c2e9, #c471ed, #f64f59);

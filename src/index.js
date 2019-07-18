@@ -6,6 +6,7 @@ const alias = document.getElementById('alias')
 const sucess = document.getElementById('sucess')
 const shortenedURL = document.getElementById('shortenedURL')
 const sbtn = document.getElementById('sbtn')
+const qr = document.getElementById('qr')
 const pushJSON = (url, data) => {
 	const request = new XMLHttpRequest()
 	request.open('POST', url)
@@ -77,6 +78,7 @@ const copyer = (containerid) => {
 		}
 	}
 }
+const createFrame = src => `<a href='${src}' target='_blank'><img src='${src}' alt='rq code'></a>`
 const send_request = (url) => {
 	const myurl = url
 	const address = `${endpoint}/${window.location.hash.substr(1)}`
@@ -90,6 +92,7 @@ const send_request = (url) => {
 	copyer('shortenedURL')
 	sucess.innerHTML = 'short url copied to clipboard'
 	status.innerHTML = 'shorten'
+	qr.innerHTML = createFrame(`https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${shortenedURL.value}`)
 }
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
 const shorturl = async () => {
