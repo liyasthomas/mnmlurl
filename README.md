@@ -34,9 +34,17 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 :fire: **Custom and random alias support**: Add your own custom alias or generate a random one.
 
+:1234: **Qenerate QR code**: Create and download shortened URL's QR code.
+
+:alembic: **Manage URLs**: Delete already created alias to update/create new URLs.
+
 :zap: **Performance**: mnmlurl is a thin web app on top of HTML, CSS and JavaScript. Being a Progressive web app, mnmlurl offers lightning fast loading and offline support via workbox and service worker.
 
 :information_desk_person: **Browser extension**:  Get mnmlurl [Chrome browser extension](https://github.com/liyasthomas/mnmlurl-extension)
+
+**Minimal URL can be hosted on any website hosting services like GitHub/GitLab pages, Firebase/Heroku hosting, yoursite.com, etc. For hosting in such custom domains, Its advised to `npm run-scripts build` and upload `output` folder. Hosting on GitHub pages was just for proof of concept.**
+
+**IMPORTANT: Minimal URL is an experimental project. Don't shorten sensitive contents/URLs with it. jsonstore.io endpoints are always public making shortened URLs visible for everyone.**
 
 ---
 
