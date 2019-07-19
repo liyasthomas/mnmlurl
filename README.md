@@ -19,6 +19,8 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 ### :link: Minimal URL is a modern URL shortener with support for custom alias by [Liyas Thomas](https://github.com/liyasthomas)
 
+## Follow this tutorial to create your own URL shortener with support for custom alias & can be hosted even in GitHub pages: [How to create your own custom URL shortener in 10 minutes for free & deploy to GitHub 🚀](https://dev.to/liyasthomas/how-to-create-your-own-custom-url-shortener-in-10-minutes-for-free-deploy-to-github-2k6h)
+
 <div align="center">
   <br>
   <img src="src/icons/screely.png" alt="mnmlurl" width="100%">
