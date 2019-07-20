@@ -10,7 +10,7 @@ const sucess = document.getElementById('sucess')
 const qr = document.getElementById('qr')
 const pushJSON = (url, data) => {
 	const request = new XMLHttpRequest()
-	request.open('POST', url)
+	request.open('POST', url, true)
 	request.setRequestHeader('Content-Type', 'application/json; charset=UTF-8')
 	request.send(JSON.stringify(data))
 }
@@ -77,7 +77,7 @@ const copyer = (containerid) => {
 		}
 	}
 }
-const createFrame = src => `<a href='${src}' target='_blank'><img src='${src}' alt='rq code'></a>`
+const createFrame = src => `<a href='${src}' target='_blank'><img src='${src}' alt='QR code'></a>`
 const send_request = (url) => {
 	const myurl = url
 	const address = `${endpoint}/${window.location.hash.substr(1)}`

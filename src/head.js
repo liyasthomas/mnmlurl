@@ -1,7 +1,20 @@
 const endpoint = 'https://www.jsonstore.io/6b6e3cd07f3aaecd8df25ab95875eb2462f00a7614f7205c2d5dc5229896ea98'
+const ebox = document.getElementById('erbox')
 const fetchJSON = (a) => {
 	const f = new XMLHttpRequest()
 	f.open('GET', a, false)
+	f.onreadystatechange = oEvent => {
+		if (f.readyState === 4) {
+			if (f.status === 200) {} else {
+				ebox.style.display = 'block'
+				ebox.innerHTML = 'network seems to be offline'
+			}
+		}
+	}
+	f.onerror = () => {
+		ebox.style.display = 'block'
+		ebox.innerHTML = 'network error'
+	}
 	f.send()
 	return f.responseText
 }
