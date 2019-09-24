@@ -40,7 +40,7 @@
     "snyk": "^1.227.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.0",
+    "@babel/core": "^7.6.2",
     "@babel/plugin-transform-runtime": "^7.6.0"
   },
   "snyk": true
