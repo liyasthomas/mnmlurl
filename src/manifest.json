@@ -34,8 +34,9 @@
 			"type": "image/png"
 		}
 	],
-	"start_url": "/",
+	"start_url": ".\/?utm_source=mnmlurlpwa&utm_medium=pwa&utm_campaign=pwapp",
 	"display": "standalone",
+	"orientation": "any",
 	"theme_color": "#ffffff",
 	"background_color": "#ffffff"
 }
