@@ -37,7 +37,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.0.1",
     "vinyl-source-stream": "^2.0.0",
-    "snyk": "^1.239.3"
+    "snyk": "^1.241.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
