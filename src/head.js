@@ -39,7 +39,7 @@ if (window.location.hash != '') {
 	const data = res.result
 	if (data != null) {
 		if (isURL(data)) {
-			if(!startWithProtocol(a)) {
+			if(!startWithProtocol(data)) {
 				data = `http://${data}`;
 			}
 			window.location.href = data
