@@ -36,8 +36,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-zip": "^5.0.1",
-    "vinyl-source-stream": "^2.0.0",
-    "snyk": "^1.271.0"
+    "vinyl-source-stream": "^2.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.7.7",
