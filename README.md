@@ -52,8 +52,6 @@ When I wrote this, only God and I understood what I was doing. Now, only God kno
 
 ## Demo
 
-[mnmlurl.ml](https://mnmlurl.ml) _(production)_
-
 [liyasthomas.github.io/mnmlurl/src](https://liyasthomas.github.io/mnmlurl/src) _(development)_
 
 ---
